@@ -24,9 +24,10 @@ npm install live-server
 ### How to try out the tutorial steps
 
 1. Clone the repository.
-2. Install dependencies with JSPM
-3. Run live-server
-4. Open your browser and browse to [http://127.0.0.1:8080]
+2. Go into any of the tutorial step folders
+3. Install dependencies with JSPM
+4. Run live-server
+5. Open your browser and browse to [http://127.0.0.1:8080]
 
 ```sh
 git clone https://github.com/InfomediaLtd/angular2-tutorial
