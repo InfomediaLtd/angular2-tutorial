@@ -1,9 +1,12 @@
 import {Component} from 'angular2/angular2'
+import {UsersList} from './components/users-list'
 
 @Component({
     selector: 'my-app',
-    template: `<h3>{{title}}</h3>`
+    template: `
+        <users/>
+    `,
+    directives: [UsersList]
 })
 export class AppComponent {
-    title:string = "Angular 2.0 is in the house.";
 }
