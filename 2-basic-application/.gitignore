@@ -12,3 +12,4 @@ out
 **.js
 **.js.map
 
+!config.js
