@@ -1,5 +1,5 @@
 import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
-import {UsersService} from '../services/users-service';
+import {UserService} from '../services/user-service';
 
 @Component({
     selector: 'users',
@@ -22,8 +22,8 @@ export class UsersList {
 
     public users:any[] = null;
 
-    constructor(service:UsersService) {
-        service.search().subscribe((users) =>  { this.users = users; });
+    constructor(service:UserService) {
+        service.list().subscribe((users) =>  { this.users = users; });
     }
 
 }

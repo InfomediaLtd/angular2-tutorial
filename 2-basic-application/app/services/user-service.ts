@@ -2,12 +2,12 @@ import {Http} from "angular2/http";
 import {Injectable, Inject} from "angular2/core";
 
 @Injectable()
-export class UsersService {
+export class UserService {
 
     constructor(private _http:Http) {
     }
 
-    search() {
+    list() {
         return this._http.get(`http://jsonplaceholder.typicode.com/users`)
             .map(result => result.json());
     }
