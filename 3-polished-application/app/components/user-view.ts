@@ -9,7 +9,7 @@ import {RouterLink, RouteParams} from 'angular2/router'
             Loading user...
         </div>
         <div *ng-if="user">
-            <form *ng-if="user" class="form-horizontal">
+            <form class="form-horizontal">
                 <div class="form-group">
                     <label class="col-sm-2 control-label">ID</label>
                     <div class="col-sm-10">
