@@ -1,5 +1,6 @@
 import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
 import {UserService} from '../services/user-service';
+import {RouterLink} from 'angular2/router'
 
 @Component({
     selector: 'users',
@@ -10,13 +11,13 @@ import {UserService} from '../services/user-service';
         <div *ng-if="users">
             <ul>
                 <li *ng-for="#user of users">
-                    {{user.name}}
+                    <a [router-link]="['User', {id:user.id}]">{{user.name}}</a>
                 </li>
             </ul>
             <users/>
         </div>
     `,
-    directives: CORE_DIRECTIVES
+    directives: [CORE_DIRECTIVES, RouterLink]
 })
 export class UsersList {
 
