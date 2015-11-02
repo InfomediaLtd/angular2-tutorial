@@ -8,14 +8,13 @@ import {RouterLink} from 'angular2/router'
         <div *ng-if="!users">
             Loading users...
         </div>
-        <div *ng-if="users">
-            <ul>
-                <li *ng-for="#user of users">
-                    <a [router-link]="['User', {id:user.id}]">{{user.name}}</a>
-                </li>
-            </ul>
-            <users/>
-        </div>
+        <table *ng-if="users" class="table table-striped table-bordered table-hover">
+            <tbody>
+                <tr *ng-for="#user of users">
+                    <td><a [router-link]="['User', {id:user.id}]">{{user.name}}</a></td>
+                </tr>
+            </tbody>
+        </table>
     `,
     directives: [CORE_DIRECTIVES, RouterLink]
 })

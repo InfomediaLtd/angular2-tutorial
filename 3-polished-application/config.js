@@ -20,6 +20,8 @@ System.config({
 
   map: {
     "angular2": "npm:angular2@2.0.0-alpha.45",
+    "bootstrap": "github:twbs/bootstrap@3.3.5",
+    "css": "github:systemjs/plugin-css@0.1.19",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "ts": "github:frankwallis/plugin-typescript@2.1.4",
     "typescript": "npm:typescript@1.6.2",
@@ -59,6 +61,9 @@ System.config({
     },
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
+    },
+    "github:twbs/bootstrap@3.3.5": {
+      "jquery": "github:components/jquery@2.1.4"
     },
     "npm:@reactivex/rxjs@5.0.0-alpha.4": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",

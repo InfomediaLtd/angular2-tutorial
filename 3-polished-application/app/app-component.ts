@@ -6,7 +6,10 @@ import {UserView} from './components/user-view'
 @Component({
     selector: 'my-app',
     template: `
-        <router-outlet></router-outlet>
+        <div class="container">
+            <h1 class="jumbotron">Angular Getting Started</h1>
+            <router-outlet></router-outlet>
+        </div>
     `,
     directives: [ROUTER_DIRECTIVES]
 })
