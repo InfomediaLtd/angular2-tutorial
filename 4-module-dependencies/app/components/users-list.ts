@@ -1,29 +1,27 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/angular2';
 import {UserService} from '../services/user-service';
-import {RouterLink} from 'angular2/router'
+import {SimpleList} from 'InfomediaLtd/angular2-simple-list/app/components/simple-list';
 
 @Component({
     selector: 'users',
     template: `
-        <div *ng-if="!users">
-            Loading users...
-        </div>
-        <table *ng-if="users" class="table table-striped table-bordered table-hover">
-            <tbody>
-                <tr *ng-for="#user of users">
-                    <td><a [router-link]="['User', {id:user.id}]">{{user.name}}</a></td>
-                </tr>
-            </tbody>
-        </table>
+        <simple-list
+            [list]="users"
+            [content]="getContent"
+            [link]="getLink">
+        </simple-list>
     `,
-    directives: [CORE_DIRECTIVES, RouterLink]
+    directives: [SimpleList]
 })
 export class UsersList {
 
-    public users:any[] = null;
+    public users:any[];
 
     constructor(service:UserService) {
-        service.list().subscribe((users) =>  { this.users = users; });
+        service.list().subscribe((users) => { this.users = users; });
     }
+
+    getContent(user):string { return user.name; }
+    getLink(user):any[] { return ['User', {id:user.id}]; }
 
 }

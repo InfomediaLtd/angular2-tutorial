@@ -1,6 +1,7 @@
 {
   "jspm": {
     "dependencies": {
+      "InfomediaLtd/angular2-simple-list": "github:InfomediaLtd/angular2-simple-list@master",
       "angular2": "npm:angular2@^2.0.0-alpha.45",
       "bootstrap": "github:twbs/bootstrap@^3.3.5",
       "css": "github:systemjs/plugin-css@^0.1.19",
