@@ -1,6 +1,6 @@
 import {Component} from 'angular2/angular2';
 import {UserService} from '../services/user-service';
-import {SimpleList} from 'InfomediaLtd/angular2-simple-list/app/components/simple-list';
+import {SimpleList} from 'InfomediaLtd/angular2-simple-list/app/components/simple-list.ts!';
 
 @Component({
     selector: 'users',
