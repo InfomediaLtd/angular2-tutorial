@@ -1,6 +1,6 @@
 ## Angular 2 Tutorial
 
-The files in this project accompany the step-by-step tutorial described on Infomedia's internal Wiki.
+Step by step tutorial for getting started with Angular 2 and JSPM.
 
 The folders below should be loaded as separate projects and include all the required files to run a specific step in the tutorial. Each folder represents a separate learning block in the road to fully understand how to create an Angular 2 application.
 
