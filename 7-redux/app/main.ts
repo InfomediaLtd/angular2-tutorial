@@ -7,7 +7,6 @@ import {AppComponent} from "./app-component";
 
 import {HTTP_PROVIDERS} from 'angular2/http';
 import {ROUTER_PROVIDERS, APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from 'angular2/router';
-import {UserService} from './services/user-service'
 
 import "bootstrap/css/bootstrap.css!"
 
@@ -25,7 +24,7 @@ bootstrap(AppComponent, [
     provide(AppStore, {useValue: appStore}),
     ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: HashLocationStrategy}),
     HTTP_PROVIDERS,
-    UserActions, UserService
+    UserActions
 ]);
 
 // polyfill for Object.assign (not part of TS yet)

@@ -18,17 +18,14 @@ import {UserActions} from "../actions/user-actions";
 })
 export class UsersList {
 
-    public users:User[];
+    private users:User[];
 
-    constructor(private _appStore:AppStore,
-                private _userActions:UserActions) {
+    private getContent = (user:User) => user.name;
+    private getLink    = (user:User) => ['User', {id:user.id}];
 
-        _appStore.subscribe((state) => { this.users = state.users; });
-        _appStore.dispatch(_userActions.fetchUsers());
-
+    constructor(appStore:AppStore, userActions:UserActions) {
+        appStore.subscribe(state => this.users = state.users);
+        appStore.dispatch(userActions.fetchUsers());
     }
-
-    getContent(user:User):string { return user.name; }
-    getLink(user):any[] { return ['User', {id:user.id}]; }
 
 }
