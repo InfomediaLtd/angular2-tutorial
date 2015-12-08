@@ -3,7 +3,7 @@ import {RouterLink, RouteParams} from 'angular2/router'
 import {User} from "../data/user";
 import {UserView} from "../views/user-view";
 
-import {AppStore} from "../stores/app-store";
+import {AppStore} from "InfomediaLtd/angular2-redux/src/app-store.ts!";
 import {UserActions} from "../actions/user-actions";
 
 @Component({

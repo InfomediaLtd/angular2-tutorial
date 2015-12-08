@@ -19,6 +19,7 @@ System.config({
   },
 
   map: {
+    "InfomediaLtd/angular2-redux": "github:InfomediaLtd/angular2-redux@master",
     "InfomediaLtd/angular2-simple-list": "github:InfomediaLtd/angular2-simple-list@master",
     "angular2": "npm:angular2@2.0.0-alpha.45",
     "bootstrap": "github:twbs/bootstrap@3.3.5",
