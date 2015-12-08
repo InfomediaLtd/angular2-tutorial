@@ -1,7 +1,9 @@
 import {Component} from 'angular2/angular2';
-import {UserService} from '../services/user-service';
 import {SimpleList} from 'InfomediaLtd/angular2-simple-list/app/components/simple-list.ts!';
 import {User} from "../data/user";
+
+import {AppStore} from "../stores/app-store";
+import {UserActions} from "../actions/user-actions";
 
 @Component({
     selector: 'users',
@@ -18,8 +20,12 @@ export class UsersList {
 
     public users:User[];
 
-    constructor(service:UserService) {
-        service.list().subscribe((users) => { this.users = users; });
+    constructor(private _appStore:AppStore,
+                private _userActions:UserActions) {
+
+        _appStore.subscribe((state) => { this.users = state.users; });
+        _appStore.dispatch(_userActions.fetchUsers());
+
     }
 
     getContent(user:User):string { return user.name; }

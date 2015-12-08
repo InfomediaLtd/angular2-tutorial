@@ -1,6 +1,4 @@
-import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES, Input} from 'angular2/angular2';
-import {UserService} from '../services/user-service';
-import {RouterLink, RouteParams} from 'angular2/router'
+import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES, Input, ChangeDetectionStrategy} from 'angular2/angular2';
 import {User} from "../data/user";
 
 @Component({
@@ -39,26 +37,11 @@ import {User} from "../data/user";
                     </div>
                 </div>
             </form>
-            <hr/>
-            <a *ng-if="userId" [router-link]="['Users']">Show all users</a>
         </div>
-
     `,
-    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, RouterLink]
+    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES],
+    changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class UserView {
-
-    private userId:string;
-
     @Input() private user:User;
-
-    constructor(service:UserService, params: RouteParams) {
-        this.userId = params.get("id");
-        if (this.userId) {
-            service.get(this.userId).subscribe((user) => {
-                this.user = user;
-            });
-        }
-    }
-
 }
