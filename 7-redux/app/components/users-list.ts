@@ -2,7 +2,7 @@ import {Component} from 'angular2/angular2';
 import {SimpleList} from 'InfomediaLtd/angular2-simple-list/app/components/simple-list.ts!';
 import {User} from "../data/user";
 
-import {AppStore} from "InfomediaLtd/angular2-redux/src/app-store.ts!";
+import {AppStore} from "angular2-redux";
 import {UserActions} from "../actions/user-actions";
 
 @Component({

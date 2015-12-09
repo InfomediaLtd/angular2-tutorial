@@ -13,7 +13,7 @@ import "bootstrap/css/bootstrap.css!"
 import { createStore, applyMiddleware } from "redux";
 import thunkMiddleware from 'redux-thunk'
 
-import {AppStore} from "InfomediaLtd/angular2-redux/src/app-store.ts!";
+import {AppStore} from "angular2-redux";
 import users from "./reducers/users-reducer"
 import {UserActions} from "./actions/user-actions";
 

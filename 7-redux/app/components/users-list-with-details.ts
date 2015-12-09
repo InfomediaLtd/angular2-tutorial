@@ -3,7 +3,7 @@ import {SimpleList} from 'InfomediaLtd/angular2-simple-list/app/components/simpl
 import {UserView} from "../views/user-view";
 import {User} from "../data/user";
 
-import {AppStore} from "InfomediaLtd/angular2-redux/src/app-store.ts!";
+import {AppStore} from "angular2-redux";
 import {UserActions} from "../actions/user-actions";
 
 @Component({
