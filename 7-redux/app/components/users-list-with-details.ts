@@ -21,20 +21,24 @@ import {UserActions} from "../actions/user-actions";
 })
 export class UsersListWithDetails {
 
-    public users:User[];
-    public currentUser:User;
+    private users:User[];
+    private currentUser:User;
 
-    constructor(private _appStore:AppStore,
-                private _userActions:UserActions) {
+    private selectCurrentUser;
 
-        _appStore.subscribe((state) => {
+    constructor(private appStore:AppStore,
+                private userActions:UserActions) {
+
+        this.selectCurrentUser = userActions.createDispatcher(appStore, userActions.setCurrentUser);
+
+        appStore.subscribe((state) => {
             this.users = state.users;
             this.currentUser = state.current;
         });
-        _appStore.dispatch(_userActions.fetchUsers());
+
+        appStore.dispatch(userActions.fetchUsers());
     }
 
-    selectCurrentUser(user:User) { this._appStore.dispatch(this._userActions.setCurrentUser(user));}
     getContent(user:User):string { return user.name; }
     getLink(user:User):any[] { return ['User', {id:user.id}]; }
 

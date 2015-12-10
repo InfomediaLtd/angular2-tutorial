@@ -1,6 +1,7 @@
 import {Http} from "angular2/http";
 import {Injectable} from "angular2/core";
 import {User} from "../data/user";
+import {Actions} from "../../jspm_packages/npm/angular2-redux@1.0.3/src/actions";
 
 export const REQUEST_USERS:string = 'REQUEST_USERS';
 export const RECEIVE_USERS:string = 'RECEIVE_USERS';
@@ -9,7 +10,7 @@ export const CURRENT_USER:string = 'CURRENT_USER';
 const BASE_URL:string = "http://jsonplaceholder.typicode.com/users";
 
 @Injectable()
-export class UserActions {
+export class UserActions extends Actions {
 
     constructor(private _http:Http) {
     }
