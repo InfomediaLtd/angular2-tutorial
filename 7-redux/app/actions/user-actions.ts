@@ -13,6 +13,7 @@ const BASE_URL:string = "http://jsonplaceholder.typicode.com/users";
 export class UserActions extends Actions {
 
     constructor(private _http:Http) {
+        super();
     }
 
     fetchUsers() {
