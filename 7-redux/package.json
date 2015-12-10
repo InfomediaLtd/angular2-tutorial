@@ -13,7 +13,19 @@
       "zone.js": "npm:zone.js@^0.5.8"
     },
     "devDependencies": {
+      "clean-css": "npm:clean-css@^3.4.8",
       "typescript": "npm:typescript@^1.6.2"
     }
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-insert": "^0.5.0",
+    "gulp-replace": "^0.5.4",
+    "gulp-run": "^1.6.12",
+    "gulp-shell": "^0.5.1",
+    "gulp-uglify": "^1.5.1",
+    "run-sequence": "^1.1.5"
   }
 }

@@ -13,3 +13,4 @@ out
 **.js.map
 
 !config.js
+!gulpfile.js
