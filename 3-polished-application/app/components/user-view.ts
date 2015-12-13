@@ -1,14 +1,14 @@
-import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/core';
 import {UserService} from '../services/user-service';
 import {RouterLink, RouteParams} from 'angular2/router'
 
 @Component({
     selector: 'user',
     template: `
-        <div *ng-if="!user">
+        <div *ngIf="!user">
             Loading user...
         </div>
-        <div *ng-if="user">
+        <div *ngIf="user">
             <form class="form-horizontal">
                 <div class="form-group">
                     <label class="col-sm-2 control-label">ID</label>
@@ -42,11 +42,11 @@ import {RouterLink, RouteParams} from 'angular2/router'
                 </div>
             </form>
             <hr/>
-            <a [router-link]="['Users']">Show all users</a>
+            <a [routerLink]="['Users']">Show all users</a>
         </div>
 
     `,
-    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, RouterLink]
+    directives: [RouterLink]
 })
 export class UserView {
 

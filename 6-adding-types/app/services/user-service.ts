@@ -1,7 +1,8 @@
 import {Http} from "angular2/http";
 import {Injectable, Inject} from "angular2/core";
 import {User} from "../data/user";
-import {Observable} from "@reactivex/rxjs";
+import {Observable} from "angular2/observable";
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService {

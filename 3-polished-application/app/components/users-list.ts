@@ -1,26 +1,26 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/core';
 import {UserService} from '../services/user-service';
 import {RouterLink} from 'angular2/router'
 
 @Component({
     selector: 'users',
     template: `
-        <div *ng-if="!users">
+        <div *ngIf="!users">
             Loading users...
         </div>
-        <table *ng-if="users" class="table table-striped table-bordered table-hover">
+        <table *ngIf="users" class="table table-striped table-bordered table-hover">
             <tbody>
-                <tr *ng-for="#user of users">
-                    <td><a [router-link]="['User', {id:user.id}]">{{user.name}}</a></td>
+                <tr *ngFor="#user of users">
+                    <td><a [routerLink]="['User', {id:user.id}]">{{user.name}}</a></td>
                 </tr>
             </tbody>
         </table>
     `,
-    directives: [CORE_DIRECTIVES, RouterLink]
+    directives: [RouterLink]
 })
 export class UsersList {
 
-    public users:any[] = null;
+    private users:any[] = null;
 
     constructor(service:UserService) {
         service.list().subscribe((users) =>  { this.users = users; });

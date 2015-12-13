@@ -1,4 +1,4 @@
-import {Component} from 'angular2/angular2'
+import {Component} from 'angular2/core'
 import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'
 import {UsersList} from './components/users-list'
 import {UserView} from './components/user-view'
@@ -18,5 +18,4 @@ import {UserView} from './components/user-view'
     {path: '/users', component: UsersList, as: 'Users'},
     {path: '/user/:id', component: UserView, as: 'User'}
 ])
-export class AppComponent {
-}
+export class AppComponent { }

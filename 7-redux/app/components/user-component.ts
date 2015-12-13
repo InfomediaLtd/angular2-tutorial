@@ -1,4 +1,4 @@
-import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES, Input} from 'angular2/angular2';
+import {Component, Input} from 'angular2/core';
 import {RouterLink, RouteParams} from 'angular2/router'
 import {User} from "../data/user";
 import {UserView} from "../views/user-view";
@@ -12,9 +12,9 @@ import {UserActions} from "../actions/user-actions";
         <div [hidden]="currentUser">Loading...</div>
         <user [user]="currentUser"></user>
         <hr/>
-        <a [router-link]="['Users']">Show all users</a>
+        <a [routerLink]="['Users']">Show all users</a>
     `,
-    directives: [CORE_DIRECTIVES, FORM_DIRECTIVES, RouterLink, UserView]
+    directives: [RouterLink, UserView]
 })
 export class UserComponent {
 

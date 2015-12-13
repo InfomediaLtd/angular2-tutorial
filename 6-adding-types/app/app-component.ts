@@ -1,4 +1,4 @@
-import {Component} from 'angular2/angular2'
+import {Component} from 'angular2/core'
 import {RouteConfig, ROUTER_DIRECTIVES, Location} from 'angular2/router'
 import {UsersList} from './components/users-list'
 import {UserView} from './components/user-view'
@@ -11,10 +11,10 @@ import {UsersListWithDetails} from "./components/users-list-with-details";
             <h1 class="jumbotron">Angular Getting Started</h1>
             <button type="button"
                 [class]="'btn ' + getClass('btn-primary','btn-default','/user')"
-                [router-link]="['./Users']" class="active">Users</button>
+                [routerLink]="['./Users']" class="active">Users</button>
             <button type="button"
                 [class]="'btn ' + getClass('btn-default','btn-primary','/user')"
-                [router-link]="['./UsersWithDetails']" style="margin-left:20px">Users With Details</button>
+                [routerLink]="['./UsersWithDetails']" style="margin-left:20px">Users With Details</button>
             <hr/>
             <router-outlet></router-outlet>
         </div>

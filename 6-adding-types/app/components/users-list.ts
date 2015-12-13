@@ -1,4 +1,4 @@
-import {Component} from 'angular2/angular2';
+import {Component} from 'angular2/core';
 import {UserService} from '../services/user-service';
 import {SimpleList} from 'InfomediaLtd/angular2-simple-list/app/components/simple-list.ts!';
 import {User} from "../data/user";

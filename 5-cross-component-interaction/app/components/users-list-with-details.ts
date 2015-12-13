@@ -1,4 +1,4 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component} from 'angular2/core';
 import {UserService} from '../services/user-service';
 import {SimpleList} from 'InfomediaLtd/angular2-simple-list/app/components/simple-list.ts!';
 import {UserView} from "./user-view";
@@ -12,14 +12,14 @@ import {UserView} from "./user-view";
             [link]="getLink"
             (current)="currentUser=$event">
         </simple-list>
-        <user *ng-if="currentUser" [user]="currentUser" class="border:1px solid black"></user>
+        <user *ngIf="currentUser" [user]="currentUser" class="border:1px solid black"></user>
     `,
-    directives: [CORE_DIRECTIVES, SimpleList, UserView]
+    directives: [SimpleList, UserView]
 })
 export class UsersListWithDetails {
 
-    public users:any[];
-    public currentUser:any;
+    private users:any[];
+    private currentUser:any;
 
     constructor(service:UserService) {
         service.list().subscribe((users) => { this.users = users; });

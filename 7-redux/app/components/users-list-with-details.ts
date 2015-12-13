@@ -1,4 +1,4 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/angular2';
+import {Component, CORE_DIRECTIVES} from 'angular2/core';
 import {SimpleList} from 'InfomediaLtd/angular2-simple-list/app/components/simple-list.ts!';
 import {UserView} from "../views/user-view";
 import {User} from "../data/user";
@@ -15,9 +15,9 @@ import {UserActions} from "../actions/user-actions";
             [link]="getLink"
             (current)="selectCurrentUser($event)">
         </simple-list>
-        <user *ng-if="currentUser" [user]="currentUser" class="border:1px solid black"></user>
+        <user *ngIf="currentUser" [user]="currentUser" class="border:1px solid black"></user>
     `,
-    directives: [CORE_DIRECTIVES, SimpleList, UserView]
+    directives: [SimpleList, UserView]
 })
 export class UsersListWithDetails {
 

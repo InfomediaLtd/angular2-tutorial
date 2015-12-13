@@ -1,5 +1,6 @@
 import {Http} from "angular2/http";
 import {Injectable, Inject} from "angular2/core";
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class UserService {
