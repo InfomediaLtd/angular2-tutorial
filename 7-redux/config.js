@@ -21,12 +21,12 @@ System.config({
   map: {
     "InfomediaLtd/angular2-simple-list": "github:InfomediaLtd/angular2-simple-list@master",
     "angular2": "npm:angular2@2.0.0-alpha.53",
-    "angular2-redux": "npm:angular2-redux@1.0.4",
+    "angular2-redux": "npm:angular2-redux@1.0.6",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "clean-css": "npm:clean-css@3.4.8",
     "css": "github:systemjs/plugin-css@0.1.20",
     "redux": "npm:redux@3.0.5",
-    "redux-thunk": "npm:redux-thunk@1.0.0",
+    "redux-thunk": "npm:redux-thunk@1.0.2",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "rxjs": "npm:rxjs@5.0.0-alpha.14",
     "ts": "github:frankwallis/plugin-typescript@2.4.3",
@@ -102,7 +102,7 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:angular2-redux@1.0.4": {
+    "npm:angular2-redux@1.0.6": {
       "angular2": "npm:angular2@2.0.0-alpha.53",
       "redux": "npm:redux@3.0.5"
     },
