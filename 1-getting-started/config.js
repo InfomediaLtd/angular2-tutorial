@@ -19,7 +19,7 @@ System.config({
   },
 
   map: {
-    "angular2": "npm:angular2@2.0.0-alpha.54",
+    "angular2": "npm:angular2@2.0.0-beta.0",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "ts": "github:frankwallis/plugin-typescript@2.4.3",
     "typescript": "npm:typescript@1.7.5",
@@ -60,7 +60,7 @@ System.config({
     "github:jspm/nodelibs-vm@0.1.0": {
       "vm-browserify": "npm:vm-browserify@0.0.4"
     },
-    "npm:angular2@2.0.0-alpha.54": {
+    "npm:angular2@2.0.0-beta.0": {
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
       "es6-promise": "npm:es6-promise@3.0.2",
       "es6-shim": "npm:es6-shim@0.33.13",
