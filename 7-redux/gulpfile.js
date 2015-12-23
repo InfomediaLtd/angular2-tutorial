@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var clean = require('gulp-clean');
+var rimraf = require('gulp-rimraf');
 var shell = require('gulp-shell');
 var runSequence = require('run-sequence');
 var replace = require('gulp-replace');
@@ -17,7 +17,7 @@ var paths = {
 
 // Delete the dist directory
 gulp.task('clean', function() {
-    return gulp.src(paths.dist, {read: false}).pipe(clean());
+    return gulp.src(paths.dist, {read: false}).pipe(rimraf({ force: true }));
 });
 
 // copy required sources to the dist folder
