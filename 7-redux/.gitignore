@@ -9,8 +9,6 @@ out
 .idea/
 .idea_modules/
 
-**.js
-**.js.map
+app/**/*.js
+app/**/*.js.map
 
-!config.js
-!gulpfile.js
