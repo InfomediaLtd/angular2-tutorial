@@ -1,16 +1,15 @@
 {
   "jspm": {
     "dependencies": {
-      "InfomediaLtd/angular2-simple-list": "github:InfomediaLtd/angular2-simple-list@master",
       "angular2": "npm:angular2@^2.0.0-beta.0",
       "angular2-redux": "npm:angular2-redux@^1.0.3",
+      "angular2-simple-list": "github:InfomediaLtd/angular2-simple-list@master",
       "bootstrap": "github:twbs/bootstrap@^3.3.5",
       "css": "github:systemjs/plugin-css@^0.1.19",
       "redux": "npm:redux@^3.0.4",
       "redux-thunk": "npm:redux-thunk@^1.0.0",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
       "rxjs": "npm:rxjs@^5.0.0-alpha.14",
-      "ts": "github:frankwallis/plugin-typescript@^2.1.4",
       "zone.js": "npm:zone.js@^0.5.8"
     },
     "devDependencies": {
@@ -19,15 +18,17 @@
     }
   },
   "devDependencies": {
-    "angular2": "^2.0.0-alpha.53",
+    "angular2": "^2.0.0-beta.0",
+    "angular2-redux": "^1.0.6",
     "gulp": "^3.9.0",
-    "gulp-rimraf": "^0.2.0",
     "gulp-concat": "^2.6.0",
     "gulp-insert": "^0.5.0",
     "gulp-replace": "^0.5.4",
+    "gulp-rimraf": "^0.2.0",
     "gulp-run": "^1.6.12",
     "gulp-shell": "^0.5.1",
     "gulp-uglify": "^1.5.1",
-    "run-sequence": "^1.1.5"
+    "run-sequence": "^1.1.5",
+    "rxjs": "^5.0.0-beta.0"
   }
 }

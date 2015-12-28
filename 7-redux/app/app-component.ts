@@ -24,7 +24,7 @@ import {UsersListWithDetails} from "./components/users-list-with-details";
 @RouteConfig([
   {path: '/', component: UsersListWithDetails, name: 'UsersWithDetails', useAsDefault:true},
   {path: '/users', component: UsersList, name: 'Users'},
-  {path: '/user/:id', component: UserView, name: 'User'}
+  {path: '/user/:id', component: UserComponent, name: 'User'}
 ])
 export class AppComponent {
 
