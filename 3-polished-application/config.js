@@ -4,7 +4,8 @@ System.config({
   transpiler: "typescript",
   typescriptOptions: {
     "module": "commonjs",
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "tsconfig": true
   },
   paths: {
     "npm:*": "jspm_packages/npm/*",

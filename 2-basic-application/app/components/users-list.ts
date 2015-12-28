@@ -23,6 +23,8 @@ export class UsersList {
     private users:any[] = null;
 
     constructor(service:UserService) {
+      console.log("here1");
+
         service.list().subscribe((users) =>  { this.users = users; });
     }
 

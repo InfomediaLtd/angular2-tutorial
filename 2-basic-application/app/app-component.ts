@@ -11,8 +11,8 @@ import {UserView} from './components/user-view'
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-    {path: '/', component: UsersList, as: 'Users'},
-    {path: '/users', component: UsersList, as: 'Users'},
-    {path: '/user/:id', component: UserView, as: 'User'}
+    {path: '/', component: UsersList, name: 'Users', useAsDefault:true},
+    {path: '/users', component: UsersList, name: 'Users'},
+    {path: '/user/:id', component: UserView, name: 'User'}
 ])
 export class AppComponent { }

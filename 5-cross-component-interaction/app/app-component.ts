@@ -22,9 +22,9 @@ import {UsersListWithDetails} from "./components/users-list-with-details";
     directives: [ROUTER_DIRECTIVES]
 })
 @RouteConfig([
-    {path: '/', component: UsersListWithDetails, as: 'UsersWithDetails'},
-    {path: '/users', component: UsersList, as: 'Users'},
-    {path: '/user/:id', component: UserView, as: 'User'}
+  {path: '/', component: UsersListWithDetails, name: 'UsersWithDetails', useAsDefault:true},
+  {path: '/users', component: UsersList, name: 'Users'},
+  {path: '/user/:id', component: UserView, name: 'User'}
 ])
 export class AppComponent {
 
