@@ -23,12 +23,8 @@ System.config({
     "angular2": "npm:angular2@2.0.0-beta.0",
     "reflect-metadata": "npm:reflect-metadata@0.1.2",
     "rxjs": "npm:rxjs@5.0.0-beta.0",
-    "ts": "github:frankwallis/plugin-typescript@2.4.3",
     "typescript": "npm:typescript@1.7.5",
     "zone.js": "npm:zone.js@0.5.10",
-    "github:frankwallis/plugin-typescript@2.4.3": {
-      "typescript": "npm:typescript@1.7.5"
-    },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
     },
