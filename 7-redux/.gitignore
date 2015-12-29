@@ -1,9 +1,7 @@
-build
 dist
 jspm_packages
 node_modules
-dev
-out
+typings
 
 npm-debug.log
 
