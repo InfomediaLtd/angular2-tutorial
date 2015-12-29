@@ -1,4 +1,4 @@
-import {Component, CORE_DIRECTIVES} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {SimpleList} from 'angular2-simple-list';
 import {UserView} from "../views/user-view";
 import {User} from "../data/user";

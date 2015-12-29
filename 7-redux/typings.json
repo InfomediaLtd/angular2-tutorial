@@ -1,0 +1,10 @@
+{
+  "ambientDevDependencies": {
+    "redux": "github:DefinitelyTyped/DefinitelyTyped/redux/redux.d.ts#d4f3ed0cc7f7aba3b47dc6dbc68ead8a97052fe4",
+    "redux-thunk": "github:DefinitelyTyped/DefinitelyTyped/redux-thunk/redux-thunk.d.ts#ecc37ce4e9462740693cbc078d262262f89691ad"
+  },
+  "devDependencies": {
+    "angular2-redux": "file:jspm_packages/npm/angular2-redux@1.0.7/dist/index.d.ts",
+    "angular2-simple-list": "file:jspm_packages/github/InfomediaLtd/angular2-simple-list@master/app/index.d.ts"
+  }
+}
