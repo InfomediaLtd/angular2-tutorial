@@ -5,10 +5,11 @@ node_modules
 dev
 out
 
+npm-debug.log
+
 *.iml
 .idea/
 .idea_modules/
 
 app/**/*.js
 app/**/*.js.map
-
