@@ -2,13 +2,13 @@ import {Http} from "angular2/http";
 import {Injectable} from "angular2/core";
 import {User} from "../data/user";
 import {Actions} from "angular2-redux";
-import 'rxjs/add/operator/map';
+import "rxjs/add/operator/map";
 
-export const REQUEST_USERS:string = 'REQUEST_USERS';
-export const RECEIVE_USERS:string = 'RECEIVE_USERS';
-export const CURRENT_USER:string = 'CURRENT_USER';
+export const REQUEST_USERS = "REQUEST_USERS";
+export const RECEIVE_USERS = "RECEIVE_USERS";
+export const CURRENT_USER = "CURRENT_USER";
 
-const BASE_URL:string = "http://jsonplaceholder.typicode.com/users";
+const BASE_URL = "http://jsonplaceholder.typicode.com/users";
 
 @Injectable()
 export class UserActions extends Actions {
@@ -17,7 +17,7 @@ export class UserActions extends Actions {
         super();
     }
 
-    fetchUsers() {
+    public fetchUsers() {
         return (dispatch) => {
             dispatch(this.requestUsers());
 
@@ -27,7 +27,7 @@ export class UserActions extends Actions {
                 .subscribe();
         };
     }
-    fetchUser(userId) {
+    public fetchUser(userId) {
         return (dispatch) => {
             dispatch(this.setCurrentUser(null));
 
@@ -38,18 +38,18 @@ export class UserActions extends Actions {
         };
     }
 
-    requestUsers() {
+    public requestUsers() {
         return {type: REQUEST_USERS};
     }
 
-    receiveUsers(users:User[]) {
+    public receiveUsers(users:User[]) {
         return {
             type: RECEIVE_USERS,
             users
         }
     }
 
-    setCurrentUser(current:User) {
+    public setCurrentUser(current:User) {
         return {
             type: CURRENT_USER,
             current
@@ -57,6 +57,3 @@ export class UserActions extends Actions {
     }
 
 }
-
-
-

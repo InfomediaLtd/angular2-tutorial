@@ -1,12 +1,12 @@
-import {Component, Input, OnDestroy} from 'angular2/core';
-import {RouterLink, RouteParams} from 'angular2/router'
+import {Component, Input, OnDestroy} from "angular2/core";
+import {RouterLink, RouteParams} from "angular2/router"
 import {User} from "../data/user";
 import {UserView} from "../views/user-view";
 import {AppStore} from "angular2-redux";
 import {UserActions} from "../actions/user-actions";
 
 @Component({
-    selector: 'user-component',
+    selector: "user-component",
     template: `
         <div [hidden]="currentUser">Loading...</div>
         <user [user]="currentUser"></user>
@@ -27,5 +27,5 @@ export class UserComponent implements OnDestroy {
         _appStore.dispatch(_userActions.fetchUser(params.get("id")));
     }
 
-    ngOnDestroy() { this._appStore.dispatch(this._userActions.setCurrentUser(null)); }
+    public ngOnDestroy() { this._appStore.dispatch(this._userActions.setCurrentUser(null)); }
 }

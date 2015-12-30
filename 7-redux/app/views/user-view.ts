@@ -1,8 +1,8 @@
-import {Component, Input, ChangeDetectionStrategy} from 'angular2/core';
+import {Component, Input, ChangeDetectionStrategy} from "angular2/core";
 import {User} from "../data/user";
 
 @Component({
-    selector: 'user',
+    selector: "user",
     template: `
         <div *ngIf="user">
             <form class="form-horizontal">
@@ -42,5 +42,5 @@ import {User} from "../data/user";
     changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class UserView {
-    @Input() private user:User;
+    @Input() public user:User;
 }

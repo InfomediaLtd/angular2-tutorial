@@ -1,2 +1,2 @@
-var requireDir = require('require-dir');
-requireDir('./tasks', { recurse: true });
+var requireDir = require("require-dir");
+requireDir("./tasks", { recurse: true });

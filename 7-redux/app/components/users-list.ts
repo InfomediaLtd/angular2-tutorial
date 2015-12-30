@@ -1,12 +1,12 @@
-import {Component} from 'angular2/core';
-import {SimpleList} from 'angular2-simple-list';
+import {Component} from "angular2/core";
+import {SimpleList} from "angular2-simple-list";
 import {User} from "../data/user";
 
 import {AppStore} from "angular2-redux";
 import {UserActions} from "../actions/user-actions";
 
 @Component({
-    selector: 'users',
+    selector: "users",
     template: `
         <simple-list
             [list]="users"
@@ -18,10 +18,9 @@ import {UserActions} from "../actions/user-actions";
 })
 export class UsersList {
 
-    private users:User[];
-
-    private getContent = (user:User) => user.name;
-    private getLink    = (user:User) => ['User', {id:user.id}];
+    public users:User[];
+    public getContent = (user:User) => user.name;
+    public getLink    = (user:User) => ["User", {id:user.id}];
 
     constructor(appStore:AppStore, userActions:UserActions) {
         appStore.subscribe(state => this.users = state.users);

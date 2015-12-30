@@ -1,5 +1,5 @@
-import {Component} from 'angular2/core';
-import {SimpleList} from 'angular2-simple-list';
+import {Component} from "angular2/core";
+import {SimpleList} from "angular2-simple-list";
 import {UserView} from "../views/user-view";
 import {User} from "../data/user";
 
@@ -7,7 +7,7 @@ import {AppStore} from "angular2-redux";
 import {UserActions} from "../actions/user-actions";
 
 @Component({
-    selector: 'users-with-details',
+    selector: "users-with-details",
     template: `
         <simple-list
             [list]="users"
@@ -38,7 +38,7 @@ export class UsersListWithDetails {
         appStore.dispatch(userActions.fetchUsers());
     }
 
-    getContent(user:User):string { return user.name; }
-    getLink(user:User):any[] { return ['User', {id:user.id}]; }
+    public getContent(user:User):string { return user.name; }
+    public getLink(user:User):any[] { return ["User", {id:user.id}]; }
 
 }

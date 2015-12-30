@@ -1,20 +1,20 @@
-import 'zone.js/dist/zone.min.js';
-import 'reflect-metadata';
+import "zone.js/dist/zone.min.js";
+import "reflect-metadata";
 
-import {bootstrap} from 'angular2/platform/browser';
-import {provide} from 'angular2/core';
+import {bootstrap} from "angular2/platform/browser";
+import {provide} from "angular2/core";
 import {AppComponent} from "./app-component";
 
-import {HTTP_PROVIDERS} from 'angular2/http';
-import {ROUTER_PROVIDERS, APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from 'angular2/router';
+import {HTTP_PROVIDERS} from "angular2/http";
+import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from "angular2/router";
 
-import "bootstrap/css/bootstrap.css!"
+import "bootstrap/css/bootstrap.css!";
 
 import { createStore, applyMiddleware } from "redux";
-import thunkMiddleware from 'redux-thunk'
+import thunkMiddleware from "redux-thunk";
 
 import {AppStore} from "angular2-redux";
-import users from "./reducers/users-reducer"
+import users from "./reducers/users-reducer";
 import {UserActions} from "./actions/user-actions";
 
 let createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
@@ -27,17 +27,18 @@ bootstrap(AppComponent, [
     UserActions
 ]);
 
+/* tslint:disable */
 // polyfill for Object.assign (not part of TS yet)
 // https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
 if (!Object.assign) {
-    Object.defineProperty(Object, 'assign', {
+    Object.defineProperty(Object, "assign", {
         enumerable: false,
         configurable: true,
         writable: true,
         value: function(target) {
-            'use strict';
+            "use strict";
             if (target === undefined || target === null) {
-                throw new TypeError('Cannot convert first argument to object');
+                throw new TypeError("Cannot convert first argument to object");
             }
 
             var to = Object(target);

@@ -1,5 +1,5 @@
-var fs = require('fs');
-var packageJson = JSON.parse(fs.readFileSync('package.json'));
+var fs = require("fs");
+var packageJson = JSON.parse(fs.readFileSync("package.json"));
 
 var result = {"devDependencies": {},"ambientDevDependencies": {}};
 
