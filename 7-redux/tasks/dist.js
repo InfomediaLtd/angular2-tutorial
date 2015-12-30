@@ -7,6 +7,7 @@ var insert = require("gulp-insert");
 var concat = require("gulp-concat");
 var uglify = require("gulp-uglify");
 var tslint = require("gulp-tslint");
+var tslintStylish = require('gulp-tslint-stylish');
 
 var paths = {
     dist: "./dist",
@@ -21,7 +22,11 @@ var paths = {
 gulp.task("lint", function() {
     return gulp.src(paths.sources)
         .pipe(tslint())
-        .pipe(tslint.report("verbose"));
+        .pipe(tslint.report(tslintStylish, {
+          emitError: true,
+          sort: true,
+          bell: true
+        }));
 });
 
 // Delete the dist directory
