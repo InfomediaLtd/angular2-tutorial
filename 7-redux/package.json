@@ -1,6 +1,8 @@
 {
   "scripts": {
-    "dist": "gulp dist"
+    "dist": "gulp dist",
+    "postinstall": "jspm install && npm run typings",
+    "typings": "node tasks/typings.js && rm -rf typings && typings install"
   },
   "jspm": {
     "dependencies": {
@@ -19,6 +21,16 @@
       "clean-css": "npm:clean-css@^3.4.8",
       "typescript": "npm:typescript@^1.6.2"
     }
+  },
+  "typingsDependencies": {
+    "registry": [
+      "redux",
+      "redux-thunk"
+    ],
+    "file": [
+      "jspm_packages/npm/angular2-redux@VERSION/dist/index.d.ts",
+      "jspm_packages/github/InfomediaLtd/angular2-simple-list@VERSION/app/index.d.ts"
+    ]
   },
   "devDependencies": {
     "angular2": "^2.0.0-beta.0",
