@@ -1,7 +1,8 @@
 dist
 jspm_packages
 node_modules
-typings*
+typings
+typings.json
 
 npm-debug.log
 
