@@ -18,6 +18,7 @@ System.config({
       "defaultExtension": "ts"
     },
     "angular2-simple-list": {
+      "main": "app/index.ts",
       "defaultExtension": "ts"
     }
   },
