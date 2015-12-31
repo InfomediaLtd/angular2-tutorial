@@ -1,15 +1,15 @@
 var fs = require("fs");
-var packageJson = JSON.parse(fs.readFileSync("package.json"));
+var typingsDependencies = JSON.parse(fs.readFileSync("package.json")).typingsDependencies;
 
 var result = {"devDependencies": {},"ambientDevDependencies": {}};
 
 // generate dt dependencies
-(packageJson.typingsDependencies.registry||[]).forEach(value => {
+typingsDependencies && (typingsDependencies.registry||[]).forEach(value => {
     result.ambientDevDependencies[value] = "github:DefinitelyTyped/DefinitelyTyped/" + value + "/" + value + ".d.ts";
 });
 
 // generate local d.ts dependencies
-(packageJson.typingsDependencies.file||[]).forEach((path) => {
+typingsDependencies && (typingsDependencies.file||[]).forEach((path) => {
     var dependencyName = path.replace(/@VERSION.*/, "");
     var parentPath = dependencyName.replace(/[^\/]*$/, "");
     var namePrefix = dependencyName.replace(parentPath,"");
