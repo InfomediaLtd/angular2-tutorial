@@ -1,6 +1,7 @@
 var gulp = require('gulp');
+var fs = require("fs");
+
 gulp.task("typings", function() {
-  var fs = require("fs");
   var typingsDependencies = JSON.parse(fs.readFileSync("package.json")).typingsDependencies;
 
   var result = {"devDependencies": {},"ambientDevDependencies": {}};
