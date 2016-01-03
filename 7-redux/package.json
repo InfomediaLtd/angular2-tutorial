@@ -2,7 +2,7 @@
   "scripts": {
     "dist": "gulp dist",
     "postinstall": "jspm install && npm run typings",
-    "typings": "node tasks/typings.js && rm -rf typings && typings install"
+    "typings": "gulp typings && rm -rf typings && typings install"
   },
   "jspm": {
     "dependencies": {
