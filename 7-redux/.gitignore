@@ -12,3 +12,9 @@ npm-debug.log
 
 app/**/*.js
 app/**/*.js.map
+
+test/**/*.js
+test/**/*.js.map
+
+!karma*.js
+!test/karma*.js
