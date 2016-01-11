@@ -13,7 +13,7 @@ module.exports = function (config) {
         ],
 
         jspm: {
-            serveFiles: ['app/**/*.+(ts|js|html|css)', 'test/sanity-test.spec.ts'],
+            serveFiles: ['app/**/*.+(ts|js|html|css)', 'test/**/*.spec.ts'],
             // loadFiles: ['test/**/*.spec.ts'],
             // config: 'config.js',
             // packages: "jspm_packages",

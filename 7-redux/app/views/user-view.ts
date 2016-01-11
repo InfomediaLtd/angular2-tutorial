@@ -1,5 +1,6 @@
 import {Component, Input, ChangeDetectionStrategy} from "angular2/core";
 import {User} from "../data/user";
+import { COMMON_DIRECTIVES } from "angular2/src/common/common_directives";
 
 @Component({
     selector: "user",
@@ -39,6 +40,7 @@ import {User} from "../data/user";
             </form>
         </div>
     `,
+     directives: [COMMON_DIRECTIVES],
     changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class UserView {
