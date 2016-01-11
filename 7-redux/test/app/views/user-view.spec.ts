@@ -3,7 +3,8 @@ import {
     describe,
     expect,
     injectAsync,
-    TestComponentBuilder as TCB
+    TestComponentBuilder as TCB,
+    ComponentFixture    
 } from 'angular2/testing';
 import {Component} from 'angular2/core';
 import {User} from "../../../app/data/user";
@@ -20,7 +21,8 @@ export function main() {
     describe('UserView', () => {
 
       it('renders successfully', injectAsync([TCB], (tcb:TCB) => {
-          return tcb.createAsync(UserView).then((fixture) => {
+          return tcb
+          .createAsync(UserView).then((fixture:ComponentFixture) => {
 
               const {componentInstance,nativeElement} = fixture.debugElement;
 
@@ -33,7 +35,7 @@ export function main() {
       }));
 
       it('renders user prperties', injectAsync([TCB], (tcb:TCB) => {
-            return tcb.createAsync(UserView).then(fixture => {
+            return tcb.createAsync(UserView).then((fixture:ComponentFixture) => {
 
                 const componentInstance:UserView = fixture.debugElement.componentInstance;
                 componentInstance.user = user;
