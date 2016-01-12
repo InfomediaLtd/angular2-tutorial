@@ -4,6 +4,7 @@ import {RouterLink, RouteParams} from 'angular2/router'
 
 @Component({
     selector: 'user',
+    styles: [` * { font-size: 110%; } `],
     template: `
         <div *ngIf="!user">
             Loading user...
