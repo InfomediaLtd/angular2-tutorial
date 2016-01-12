@@ -1,3 +1,4 @@
+import {it, describe, expect} from 'angular2/testing';
 import {Address} from "../../../app/data/address";
 
 export function main() {
