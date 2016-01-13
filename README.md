@@ -2,8 +2,6 @@
 
 Step by step tutorial for getting started with Angular 2 and JSPM.
 
-[![asciicast](https://asciinema.org/a/33561.png)](https://asciinema.org/a/33561)
-
 The folders below should be loaded as separate projects and include all the required files to run a specific step in the tutorial. Each folder represents a separate learning block in the road to fully understand how to create an Angular 2 application.
 
 ### Requirements
