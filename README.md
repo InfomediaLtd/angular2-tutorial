@@ -11,13 +11,13 @@ You need to have [Node.js] installed for using NPM.
 [JSPM] for managing the packages
 
 ```sh
-npm install jspm
+npm install jspm -g
 ```
 
 [live-server] for testing out in a browser
 
 ```sh
-npm install live-server
+npm install live-server -g
 ```
 
 
