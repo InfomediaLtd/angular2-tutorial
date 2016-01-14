@@ -7,13 +7,15 @@ import {User} from "../data/user";
 @Component({
     selector: 'users-with-details',
     template: `
-        <simple-list
-            [list]="users"
-            [content]="getContent"
-            [link]="getLink"
-            (current)="currentUser=$event">
+      <div class="row">
+        <simple-list class="col-xs-4"
+          [list]="users"
+          [content]="getContent"
+          [link]="getLink"
+          (current)="currentUser=$event">
         </simple-list>
-        <user *ngIf="currentUser" [user]="currentUser" class="border:1px solid black"></user>
+        <user *ngIf="currentUser" [user]="currentUser" class="col-xs-7 col-xs-offset-1"></user>
+      <div>
     `,
     directives: [SimpleList, UserView]
 })
