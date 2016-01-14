@@ -5,7 +5,7 @@
       "bootstrap": "github:twbs/bootstrap@^3.3.5",
       "css": "github:systemjs/plugin-css@^0.1.20",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
-      "rxjs": "npm:rxjs@^5.0.0-alpha.14",
+      "rxjs": "npm:rxjs@5.0.0-beta.0",
       "zone.js": "npm:zone.js@^0.5.8"
     },
     "devDependencies": {
@@ -14,6 +14,6 @@
   },
   "devDependencies": {
     "angular2": "^2.0.0-beta.1",
-    "rxjs": "^5.0.0-beta.0"
+    "rxjs": "5.0.0-beta.0"
   }
 }

@@ -1,4 +1,4 @@
-import {Address} from "../data/address";
+import {Address} from "./address";
 
 export class User {
     public id:string;
