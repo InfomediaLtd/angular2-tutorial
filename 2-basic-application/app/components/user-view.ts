@@ -4,6 +4,7 @@ import {RouterLink, RouteParams} from 'angular2/router'
 
 @Component({
     selector: 'user',
+    providers: [UserService],
     template: `
         <a [routerLink]="['Users']">Show all users</a>
         <hr/>
