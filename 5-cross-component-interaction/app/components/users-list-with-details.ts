@@ -5,6 +5,7 @@ import {UserView} from "./user-view";
 
 @Component({
     selector: 'users-with-details',
+    providers: [UserService],
     template: `
         <div class="row">
           <simple-list class="col-xs-4"
