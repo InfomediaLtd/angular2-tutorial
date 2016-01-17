@@ -5,6 +5,7 @@ import {User} from "../data/user";
 
 @Component({
     selector: 'users',
+    providers: [UserService],
     template: `
         <simple-list
             [list]="users"

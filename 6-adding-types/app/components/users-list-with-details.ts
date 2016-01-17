@@ -6,6 +6,7 @@ import {User} from "../data/user";
 
 @Component({
     selector: 'users-with-details',
+    providers: [UserService],
     template: `
       <div class="row">
         <simple-list class="col-xs-4"

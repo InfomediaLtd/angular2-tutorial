@@ -6,6 +6,7 @@ import {User} from "../data/user";
 
 @Component({
     selector: 'user',
+    providers: [UserService],
     template: `
         <div *ngIf="!user">
             Loading user...
