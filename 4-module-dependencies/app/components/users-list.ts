@@ -4,6 +4,7 @@ import {SimpleList} from 'angular2-simple-list';
 
 @Component({
     selector: 'users',
+    providers: [UserService],
     template: `
         <simple-list
             [list]="users"
