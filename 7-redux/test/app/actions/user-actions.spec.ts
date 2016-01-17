@@ -1,32 +1,27 @@
-import {it, describe, expect} from 'angular2/testing';
+import {it, describe, expect, inject, beforeEachProviders} from 'angular2/testing';
 import {UserActions, REQUEST_USERS, RECEIVE_USERS, CURRENT_USER} from "../../../app/actions/user-actions";
 import {User} from "../../../app/data/user";
-import {Http, Response, RequestOptionsArgs} from "angular2/http";
-import * as Rx from "rxjs";
-
-class HttpMock extends Http {
-    constructor(private response) {
-      super(null,null);
-    }
-    get(url:string, options?:RequestOptionsArgs):Rx.Observable<Response> {
-      return Rx.Observable.from(this.response);
-    }
-}
+import {Http, HTTP_PROVIDERS, Response, ResponseOptions} from "angular2/http";
+import {Observable} from "rxjs/Rx";
 
 export function main() {
   describe('UserActions', () => {
 
-    it('fetchUsers should work', () => {
+    beforeEachProviders(() => [Http, HTTP_PROVIDERS, UserActions]);
+
+    it('fetchUsers should work', inject([Http, UserActions], (http, userActions) => {
+
         const USERS = [<User>{name:"name1"}];
 
-        const httpMock = new HttpMock([{ json: () => USERS }]);
-        spyOn(httpMock,"get").and.callThrough();
-
+        spyOn(http, "get").and.returnValue(Observable.from([
+            new Response(new ResponseOptions({body: USERS}))
+        ]));
         const appStoreMock = { dispatch: null }
         spyOn(appStoreMock,"dispatch");
 
-        const fetchUsers = new UserActions(httpMock).fetchUsers();
+        const fetchUsers = userActions.fetchUsers();
         expect(typeof fetchUsers).toEqual("function");
+
         fetchUsers(appStoreMock.dispatch);
 
         const dispatchSpy = appStoreMock.dispatch;
@@ -35,24 +30,25 @@ export function main() {
         expect(dispatchSpy.calls.argsFor(0)[0]).toEqual({type: REQUEST_USERS});
         expect(dispatchSpy.calls.argsFor(1)[0]).toEqual({type: RECEIVE_USERS, users:USERS});
 
-        const httpGetSpy = httpMock.get;
+        const httpGetSpy = http.get;
         expect(httpGetSpy).toHaveBeenCalled();
         expect(httpGetSpy.calls.count()).toEqual(1);
         expect(httpGetSpy.calls.first().args[0]).toEqual("http://jsonplaceholder.typicode.com/users");
 
-    });
+    }));
 
-    it('fetchUser should work', () => {
+    it('fetchUser should work', inject([Http, UserActions], (http, userActions) => {
         const USER_ID = "111";
         const USER = <User>{name:"name1"};
 
-        const httpMock = new HttpMock([{ json: () => USER }]);
-        spyOn(httpMock,"get").and.callThrough();
+        spyOn(http, "get").and.returnValue(Observable.from([
+            new Response(new ResponseOptions({body: USER}))
+        ]));
 
         const appStoreMock = { dispatch: null }
         spyOn(appStoreMock,"dispatch");
 
-        const fetchUser = new UserActions(httpMock).fetchUser(USER_ID);
+        const fetchUser = userActions.fetchUser(USER_ID);
         expect(typeof fetchUser).toEqual("function");
         fetchUser(appStoreMock.dispatch);
 
@@ -62,12 +58,12 @@ export function main() {
         expect(dispatchSpy.calls.argsFor(0)[0]).toEqual({type: CURRENT_USER, current:null});
         expect(dispatchSpy.calls.argsFor(1)[0]).toEqual({type: CURRENT_USER, current:USER});
 
-        const httpGetSpy = httpMock.get;
+        const httpGetSpy = http.get;
         expect(httpGetSpy).toHaveBeenCalled();
         expect(httpGetSpy.calls.count()).toEqual(1);
         expect(httpGetSpy.calls.first().args[0]).toEqual(`http://jsonplaceholder.typicode.com/users/${USER_ID}`);
 
-    });
+    }));
 
     it('requestUsers should work', () =>
         expect(new UserActions(null).requestUsers().type).toEqual(REQUEST_USERS));
