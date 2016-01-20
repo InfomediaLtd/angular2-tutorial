@@ -1,65 +1,21 @@
 import {Component, Input} from 'angular2/core';
-import {UserService} from '../services/user-service';
-import {RouterLink, RouteParams} from 'angular2/router'
+import {LabelWithValue} from "./label-with-value";
 
 @Component({
     selector: 'user',
-    providers: [UserService],
     template: `
-        <div *ngIf="!user">
-            Loading user...
-        </div>
-        <div *ngIf="user">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">ID</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.id}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Name</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.name}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Username</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.username}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.email}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Address</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.address.street}}, {{user.address.city}}</p>
-                    </div>
-                </div>
-            </form>
-            <hr/>
-            <a [routerLink]="['Users']">Show all users</a>
-        </div>
+        <form *ngIf="user" class="form-horizontal">
+            <label-with-value label="ID" value="{{user.id}}"></label-with-value>
+            <label-with-value label="Name" value="{{user.name}}"></label-with-value>
+            <label-with-value label="Username" value="{{user.username}}"></label-with-value>
+            <label-with-value label="Email" value="{{user.email}}"></label-with-value>
+            <label-with-value label="Address" value="{{user.address.street}}, {{user.address.city}}"></label-with-value>
+        </form>
     `,
-    directives: [RouterLink]
+    directives: [LabelWithValue]
 })
 export class UserView {
 
-    private userId:string;
     @Input() private user:any;
-
-    constructor(service:UserService, params: RouteParams) {
-        this.userId = params.get("id");
-        if (this.userId) {
-            service.get(this.userId).subscribe((user) => {
-                this.user = user;
-            });
-        }
-    }
 
 }

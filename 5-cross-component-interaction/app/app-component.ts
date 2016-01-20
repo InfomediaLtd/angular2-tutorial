@@ -1,7 +1,7 @@
 import {Component} from 'angular2/core'
 import {RouteConfig, ROUTER_DIRECTIVES, Location} from 'angular2/router'
 import {UsersList} from './components/users-list'
-import {UserView} from './components/user-view'
+import {UserComponent} from './components/user-component'
 import {UsersListWithDetails} from "./components/users-list-with-details";
 
 @Component({
@@ -24,7 +24,7 @@ import {UsersListWithDetails} from "./components/users-list-with-details";
 @RouteConfig([
   {path: '/', component: UsersListWithDetails, name: 'UsersWithDetails', useAsDefault:true},
   {path: '/users', component: UsersList, name: 'Users'},
-  {path: '/user/:id', component: UserView, name: 'User'}
+  {path: '/user/:id', component: UserComponent, name: 'User'}
 ])
 export class AppComponent {
 
