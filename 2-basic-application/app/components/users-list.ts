@@ -6,16 +6,12 @@ import {RouterLink} from 'angular2/router'
     selector: 'users',
     providers: [UserService],
     template: `
-        <div *ngIf="!users">
-            Loading users...
-        </div>
-        <div *ngIf="users">
-            <ul>
-                <li *ngFor="#user of users">
-                    <a [routerLink]="['User', {id:user.id}]">{{user.name}}</a>
-                </li>
-            </ul>
-        </div>
+        <div *ngIf="!users">Loading users...</div>
+        <ul *ngIf="users">
+            <li *ngFor="#user of users">
+                <a [routerLink]="['User', {id:user.id}]">{{user.name}}</a>
+            </li>
+        </ul>
     `,
     directives: [RouterLink]
 })
