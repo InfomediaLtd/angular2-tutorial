@@ -1,46 +1,20 @@
 import {Component, Input, ChangeDetectionStrategy} from "angular2/core";
+import {LabelWithValue} from "./label-with-value";
 import {User} from "../data/user";
 import { COMMON_DIRECTIVES } from "angular2/src/common/common_directives";
 
 @Component({
     selector: "user",
     template: `
-        <div *ngIf="user">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">ID</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.id}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Name</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.name}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Username</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.username}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.email}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Address</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.address.street}}, {{user.address.city}}</p>
-                    </div>
-                </div>
-            </form>
-        </div>
+      <form *ngIf="user" class="form-horizontal">
+          <label-with-value label="ID" value="{{user.id}}"></label-with-value>
+          <label-with-value label="Name" value="{{user.name}}"></label-with-value>
+          <label-with-value label="Username" value="{{user.username}}"></label-with-value>
+          <label-with-value label="Email" value="{{user.email}}"></label-with-value>
+          <label-with-value label="Address" value="{{user.address.street}}, {{user.address.city}}"></label-with-value>
+      </form>
     `,
-     directives: [COMMON_DIRECTIVES],
+     directives: [COMMON_DIRECTIVES, LabelWithValue],
     changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class UserView {
