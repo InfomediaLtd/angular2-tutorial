@@ -21,9 +21,7 @@ export class UserComponent {
     @Input() private user:any;
 
     constructor(service:UserService, params: RouteParams) {
-      service.get(params.get("id")).subscribe((user) => {
-          this.user = user;
-      });
+        service.get(params.get("id")).subscribe(user => this.user = user);
     }
 
 }

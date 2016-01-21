@@ -25,9 +25,8 @@ export class UsersListWithDetails {
     private currentUser:any;
 
     constructor(service:UserService) {
-        service.list().subscribe((users) => { this.users = users; });
+        service.list().subscribe(users => this.users = users);
     }
-
     getContent(user):string { return user.name; }
     getLink(user):any[] { return ['User', {id:user.id}]; }
 
