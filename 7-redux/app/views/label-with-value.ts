@@ -13,7 +13,7 @@ import {Component, Input} from 'angular2/core';
 })
 export class LabelWithValue {
 
-    @Input() private label:string;
-    @Input() private value:string;
+    @Input() public label:string;
+    @Input() public value:string;
 
 }
