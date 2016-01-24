@@ -40,7 +40,6 @@ export function main() {
 
       beforeEachProviders(() => [
           provide(AppStore, {useValue: mockAppStore}),
-          provide(UserActions, {useClass: MockUserActions}),
           RouteRegistry,
           provide(Location, {useClass: SpyLocation}),
           provide(ROUTER_PRIMARY_COMPONENT, {useValue: TestComponent}),
@@ -48,7 +47,9 @@ export function main() {
       ]);
 
       it('renders list', injectAsync([TCB], (tcb:TCB) => {
-            return tcb.createAsync(TestComponent).then((fixture:ComponentFixture) => {
+            return tcb
+              .overrideProviders(UsersList, [provide(UserActions, {useClass: MockUserActions})])
+              .createAsync(TestComponent).then((fixture:ComponentFixture) => {
                 const componentInstance:TestComponent = fixture.debugElement.componentInstance;
                 fixture.detectChanges();
                 const textContent = fixture.debugElement.nativeElement.textContent;
