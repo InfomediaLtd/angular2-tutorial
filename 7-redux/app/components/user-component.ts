@@ -4,6 +4,7 @@ import {User} from "../data/user";
 import {UserView} from "../views/user-view";
 import {AppStore} from "angular2-redux";
 import {UserActions} from "../actions/user-actions";
+import {getCurrentUser} from "../reducers/users-reducer";
 
 @Component({
     selector: "user-component",
@@ -24,7 +25,7 @@ export class UserComponent implements OnDestroy {
                 private _userActions:UserActions,
                 params: RouteParams) {
 
-        _appStore.subscribe(state => this.currentUser = state.current);
+        _appStore.subscribe(state => this.currentUser = getCurrentUser(state));
         _appStore.dispatch(_userActions.fetchUser(params.get("id")));
     }
 

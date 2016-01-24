@@ -3,6 +3,8 @@ import {SimpleList} from "angular2-simple-list";
 import {UserView} from "../views/user-view";
 import {User} from "../data/user";
 
+import {getUsers,getCurrentUser} from "../reducers/users-reducer";
+
 import {AppStore} from "angular2-redux";
 import {UserActions} from "../actions/user-actions";
 
@@ -35,8 +37,8 @@ export class UsersListWithDetails {
         this.selectCurrentUser = userActions.createDispatcher(appStore, userActions.setCurrentUser);
 
         appStore.subscribe(state => {
-            this.users = state.users;
-            this.currentUser = state.current;
+            this.users = getUsers(state);
+            this.currentUser = getCurrentUser(state);
         });
 
         appStore.dispatch(userActions.fetchUsers());
