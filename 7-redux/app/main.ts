@@ -15,7 +15,6 @@ import thunkMiddleware from "redux-thunk";
 
 import {AppStore} from "angular2-redux";
 import users from "./reducers/users-reducer";
-import {UserActions} from "./actions/user-actions";
 
 let createStoreWithMiddleware = applyMiddleware(thunkMiddleware)(createStore);
 const appStore = new AppStore(createStoreWithMiddleware(users));
@@ -23,8 +22,7 @@ const appStore = new AppStore(createStoreWithMiddleware(users));
 bootstrap(AppComponent, [
     provide(AppStore, {useValue: appStore}),
     ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: HashLocationStrategy}),
-    HTTP_PROVIDERS,
-    UserActions
+    HTTP_PROVIDERS
 ]);
 
 /* tslint:disable */
