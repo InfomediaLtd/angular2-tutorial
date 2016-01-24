@@ -1,4 +1,4 @@
-import {Component, Input} from 'angular2/core';
+import {Component, Input, ChangeDetectionStrategy} from 'angular2/core';
 
 @Component({
     selector: 'label-with-value',
@@ -9,7 +9,8 @@ import {Component, Input} from 'angular2/core';
                 <p class="form-control-static">{{value}}</p>
             </div>
         </div>
-    `
+    `,
+    changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class LabelWithValue {
 
