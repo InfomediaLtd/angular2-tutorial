@@ -13,6 +13,5 @@ import "bootstrap/css/bootstrap.css!"
 
 bootstrap(AppComponent, [
     ROUTER_PROVIDERS, provide(LocationStrategy, {useClass: HashLocationStrategy}),
-    HTTP_PROVIDERS,
-    UserService
+    HTTP_PROVIDERS
 ]);
