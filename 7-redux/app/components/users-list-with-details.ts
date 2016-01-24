@@ -8,6 +8,7 @@ import {UserActions} from "../actions/user-actions";
 
 @Component({
     selector: "users-with-details",
+    providers: [UserActions],
     template: `
       <div class="row">
         <simple-list class="col-xs-4"

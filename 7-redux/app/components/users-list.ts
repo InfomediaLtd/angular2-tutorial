@@ -7,6 +7,7 @@ import {UserActions} from "../actions/user-actions";
 
 @Component({
     selector: "users",
+    providers: [UserActions],
     template: `
         <simple-list
             [list]="users"

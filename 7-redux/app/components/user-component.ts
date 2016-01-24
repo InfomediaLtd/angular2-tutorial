@@ -7,6 +7,7 @@ import {UserActions} from "../actions/user-actions";
 
 @Component({
     selector: "user-component",
+    providers: [UserActions],
     template: `
         <div [hidden]="currentUser">Loading...</div>
         <user [user]="currentUser"></user>
