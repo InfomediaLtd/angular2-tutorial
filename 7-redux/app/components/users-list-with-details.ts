@@ -13,13 +13,16 @@ import {UserActions} from "../actions/user-actions";
     providers: [UserActions],
     template: `
       <div class="row">
-        <simple-list class="col-xs-4"
+        <simple-list class="col s-4"
           [list]="users"
           [content]="getContent"
           [link]="getLink"
           (current)="selectCurrentUser($event)">
         </simple-list>
-        <user *ngIf="currentUser" [user]="currentUser" class="col-xs-7 col-xs-offset-1"></user>
+        <div class="col s-7 offset-s-1">
+          <br/>
+          <user *ngIf="currentUser" [user]="currentUser"></user>
+        </div>
       <div>
 
     `,

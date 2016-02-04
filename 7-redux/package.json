@@ -13,6 +13,7 @@
       "angular2-simple-list": "github:InfomediaLtd/angular2-simple-list@master",
       "bootstrap": "github:twbs/bootstrap@^3.3.5",
       "css": "github:systemjs/plugin-css@^0.1.19",
+      "materialize": "github:Dogfalo/materialize@^0.97.5",
       "redux": "npm:redux@^3.0.4",
       "redux-thunk": "npm:redux-thunk@^1.0.0",
       "reflect-metadata": "npm:reflect-metadata@^0.1.2",
@@ -22,6 +23,24 @@
     "devDependencies": {
       "clean-css": "npm:clean-css@^3.4.8",
       "typescript": "npm:typescript@^1.7.5"
+    },
+    "overrides": {
+      "github:Dogfalo/materialize@0.97.5": {
+        "main": "js/materialize",
+        "shim": {
+          "js/materialize": {
+            "deps": [
+              "jquery",
+              "../css/materialize.css!"
+            ],
+            "exports": "$"
+          }
+        },
+        "dependencies": {
+          "jquery": "github:components/jquery",
+          "css": "github:systemjs/plugin-css"
+        }
+      }
     }
   },
   "typingsDependencies": {

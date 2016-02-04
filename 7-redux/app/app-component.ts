@@ -7,13 +7,14 @@ import {UsersListWithDetails} from "./components/users-list-with-details";
 @Component({
     selector: "my-app",
     template: `
+
         <div class="container">
-            <h1 class="jumbotron">Angular Getting Started</h1>
+            <h1>Angular Getting Started</h1>
             <button type="button"
-                [class]='"btn " + getClass("btn-primary","btn-default","/user")'
+                [class]='getClass("btn","btn-flat","/user")'
                 [routerLink]='["./Users"]' class="active">Users</button>
             <button type="button"
-                [class]='"btn " + getClass("btn-default","btn-primary","/user")'
+                [class]='getClass("btn-flat","btn","/user")'
                 [routerLink]='["./UsersWithDetails"]' style="margin-left:20px">Users With Details</button>
             <hr/>
             <router-outlet></router-outlet>

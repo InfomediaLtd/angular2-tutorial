@@ -8,7 +8,13 @@ import {AppComponent} from "./app-component";
 import {HTTP_PROVIDERS} from "angular2/http";
 import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from "angular2/router";
 
-import "bootstrap/css/bootstrap.css!";
+// import "bootstrap/css/bootstrap.css!";
+
+// materialize-css
+import "materialize";
+declare var Waves:any; // this is necessary to let TypeScript know that the variable exists already
+Waves.displayEffect();
+//-----------------------------
 
 import {AppStore,createAppStoreFactory} from "angular2-redux";
 import users from "./reducers/users-reducer";
