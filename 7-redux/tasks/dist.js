@@ -36,7 +36,7 @@ gulp.task("clean", function() {
 
 // copy required sources to the dist folder
 gulp.task("copy", function(){
-    gulp.src(paths.sourcesToCopy).pipe(gulp.dest(paths.dist));
+    return gulp.src(paths.sourcesToCopy).pipe(gulp.dest(paths.dist));
 });
 
 // bundle the app with jspm
@@ -46,24 +46,24 @@ gulp.task("bundle",
 
 // minify the bundle
 gulp.task("minify", function() {
-    gulp.src(paths.targetJS, {cwd: paths.dist})
-        .pipe(uglify({mangle:false}))
-        .pipe(concat("index.min.js"))
-        .pipe(gulp.dest(paths.dist));
+    return gulp.src(paths.targetJS, {cwd: paths.dist})
+              .pipe(uglify({mangle:false}))
+              .pipe(concat("index.min.js"))
+              .pipe(gulp.dest(paths.dist));
 });
 
 // update index.html to point to the minified bundle
 gulp.task("update-target-html", function(){
-    gulp.src([paths.targetHTML])
-        // remove scripts
-        .pipe(replace(/<script.*<\/script>/g, ""))
-        .pipe(replace(/<script.*\n.*<\/script>/g, ""))
-        .pipe(replace(/<script.*\n.*\n<\/script>/g, ""))
-        // cleanup
-        .pipe(replace(/\n\n/g, "\n"))
-        // link bundle script
-        .pipe(insert.append("\n<script src='" + paths.targetMinifiedJS + "'></script>"))
-        .pipe(gulp.dest(paths.dist))
+    return gulp.src([paths.targetHTML])
+              // remove scripts
+              .pipe(replace(/<script.*<\/script>/g, ""))
+              .pipe(replace(/<script.*\n.*<\/script>/g, ""))
+              .pipe(replace(/<script.*\n.*\n<\/script>/g, ""))
+              // cleanup
+              .pipe(replace(/\n\n/g, "\n"))
+              // link bundle script
+              .pipe(insert.append("\n<script src='" + paths.targetMinifiedJS + "'></script>"))
+              .pipe(gulp.dest(paths.dist))
 });
 
 // entry point - run tasks in a sequence
