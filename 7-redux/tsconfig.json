@@ -13,6 +13,7 @@
     "jspm_packages",
     "node_modules",
     "dist",
+    "test",
     "typings/main.d.ts",
     "typings/main"
   ]
