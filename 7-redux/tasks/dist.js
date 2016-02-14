@@ -13,6 +13,8 @@ var paths = {
     dist: "./dist",
     sources: "app/**/*.ts",
     sourcesToCopy: ["index.html"],
+    resourcesToCopy: "jspm_packages/github/Dogfalo/materialize*/font/**",
+    resourcesToCopyTo: "dist/jspm_packages/github/Dogfalo",
     targetHTML: "./dist/index.html",
     targetJS: "index.js",
     targetMinifiedJS: "index.min.js"
@@ -37,6 +39,11 @@ gulp.task("clean", function() {
 // copy required sources to the dist folder
 gulp.task("copy", function(){
     return gulp.src(paths.sourcesToCopy).pipe(gulp.dest(paths.dist));
+});
+
+// copy required resources to the dist folder
+gulp.task("copy-resources", function(){
+    return gulp.src(paths.resourcesToCopy).pipe(gulp.dest(paths.resourcesToCopyTo));
 });
 
 // bundle the app with jspm
@@ -72,6 +79,7 @@ gulp.task("dist", function(callback) {
         "lint",
         "clean",
         "copy",
+        "copy-resources",
         "bundle",
         "minify",
         "update-target-html",
