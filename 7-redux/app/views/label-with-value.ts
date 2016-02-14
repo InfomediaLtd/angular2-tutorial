@@ -1,7 +1,7 @@
-import {Component, Input} from 'angular2/core';
+import {Component, Input} from "angular2/core";
 
 @Component({
-    selector: 'label-with-value',
+    selector: "label-with-value",
     template: `
         <div class="form-group">
             <label class="col-sm-2 control-label">{{label}}</label>
