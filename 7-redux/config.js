@@ -31,8 +31,8 @@ System.config({
 
   map: {
     "angular2": "npm:angular2@2.0.0-beta.6",
-    "angular2-materialize": "npm:angular2-materialize@1.3.1",
-    "angular2-redux": "npm:angular2-redux@1.0.18",
+    "angular2-materialize": "npm:angular2-materialize@1.3.3",
+    "angular2-redux": "npm:angular2-redux@1.2.1",
     "angular2-simple-list": "github:InfomediaLtd/angular2-simple-list@master",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "clean-css": "npm:clean-css@3.4.9",
@@ -110,17 +110,21 @@ System.config({
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:angular2-materialize@1.3.1": {
+    "npm:angular2-materialize@1.3.3": {
       "angular2": "npm:angular2@2.0.0-beta.6",
       "materialize": "github:Dogfalo/materialize@0.97.5",
       "reflect-metadata": "npm:reflect-metadata@0.1.3",
       "rxjs": "npm:rxjs@5.0.0-beta.0",
       "zone.js": "npm:zone.js@0.5.14"
     },
-    "npm:angular2-redux@1.0.18": {
+    "npm:angular2-redux@1.2.1": {
       "angular2": "npm:angular2@2.0.0-beta.6",
+      "bootstrap": "github:twbs/bootstrap@3.3.6",
+      "css": "github:systemjs/plugin-css@0.1.20",
       "redux": "npm:redux@3.3.1",
-      "redux-thunk": "npm:redux-thunk@1.0.3"
+      "redux-thunk": "npm:redux-thunk@1.0.3",
+      "reflect-metadata": "npm:reflect-metadata@0.1.3",
+      "zone.js": "npm:zone.js@0.5.14"
     },
     "npm:angular2@2.0.0-beta.6": {
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
@@ -311,7 +315,7 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:lodash@4.3.0": {
+    "npm:lodash@4.4.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -380,8 +384,8 @@ System.config({
       "string_decoder": "npm:string_decoder@0.10.31"
     },
     "npm:redux@3.3.1": {
-      "lodash": "npm:lodash@4.3.0",
-      "lodash-es": "npm:lodash-es@4.3.0",
+      "lodash": "npm:lodash@4.4.0",
+      "lodash-es": "npm:lodash-es@4.4.0",
       "loose-envify": "npm:loose-envify@1.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },

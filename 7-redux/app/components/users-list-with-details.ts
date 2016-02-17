@@ -37,7 +37,7 @@ export class UsersListWithDetails {
 
     constructor(appStore:AppStore, userActions:UserActions) {
 
-        this.selectCurrentUser = userActions.createDispatcher(appStore, userActions.setCurrentUser);
+        this.selectCurrentUser = userActions.createDispatcher(userActions.setCurrentUser);
 
         appStore.subscribe(state => {
             this.users = getUsers(state);
