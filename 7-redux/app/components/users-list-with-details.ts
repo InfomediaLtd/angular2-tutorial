@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, OnDestroy} from "angular2/core";
 import {SimpleList} from "angular2-simple-list";
 import {UserView} from "../views/user-view";
 import {User} from "../data/user";
@@ -28,18 +28,18 @@ import {UserActions} from "../actions/user-actions";
     `,
     directives: [SimpleList, UserView]
 })
-export class UsersListWithDetails {
+export class UsersListWithDetails implements OnDestroy {
 
     private users:User[];
     private currentUser:User;
-
     private selectCurrentUser;
+    private unsubscribeFromStore:()=>void;
 
     constructor(appStore:AppStore, userActions:UserActions) {
 
         this.selectCurrentUser = userActions.createDispatcher(userActions.setCurrentUser);
 
-        appStore.subscribe(state => {
+        this.unsubscribeFromStore = appStore.subscribe(state => {
             this.users = getUsers(state);
             this.currentUser = getCurrentUser(state);
         });
@@ -50,4 +50,7 @@ export class UsersListWithDetails {
     public getContent(user:User):string { return user.name; }
     public getLink(user:User):any[] { return ["User", {id:user.id}]; }
 
+    public ngOnDestroy() {
+      this.unsubscribeFromStore();
+    }
 }

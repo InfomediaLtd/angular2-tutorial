@@ -1,4 +1,4 @@
-import {Component} from "angular2/core";
+import {Component, OnDestroy} from "angular2/core";
 import {SimpleList} from "angular2-simple-list";
 import {User} from "../data/user";
 import {AppStore} from "angular2-redux";
@@ -17,15 +17,20 @@ import {getUsers} from "../reducers/users-reducer";
     `,
     directives: [SimpleList]
 })
-export class UsersList {
+export class UsersList implements OnDestroy {
 
     public users:User[];
     public getContent = (user:User) => user.name;
     public getLink    = (user:User) => ["User", {id:user.id}];
 
+    private unsubscribeFromStore:()=>void;
+
     constructor(appStore:AppStore, userActions:UserActions) {
-        appStore.subscribe(state => this.users = getUsers(state));
+        this.unsubscribeFromStore = appStore.subscribe(state => this.users = getUsers(state));
         appStore.dispatch(userActions.fetchUsers());
     }
 
+    public ngOnDestroy() {
+      this.unsubscribeFromStore();
+    }
 }

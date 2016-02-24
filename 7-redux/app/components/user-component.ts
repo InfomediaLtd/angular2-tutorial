@@ -20,14 +20,18 @@ import {getCurrentUser} from "../reducers/users-reducer";
 export class UserComponent implements OnDestroy {
 
     @Input() private currentUser:User;
+    private unsubscribeFromStore:()=>void;
 
     constructor(private _appStore:AppStore,
                 private _userActions:UserActions,
                 params: RouteParams) {
 
-        _appStore.subscribe(state => this.currentUser = getCurrentUser(state));
+        this.unsubscribeFromStore = _appStore.subscribe(state => this.currentUser = getCurrentUser(state));
         _appStore.dispatch(_userActions.fetchUser(params.get("id")));
     }
 
-    public ngOnDestroy() { this._appStore.dispatch(this._userActions.setCurrentUser(null)); }
+    public ngOnDestroy() {
+      this._appStore.dispatch(this._userActions.setCurrentUser(null));
+      this.unsubscribeFromStore();
+    }
 }
