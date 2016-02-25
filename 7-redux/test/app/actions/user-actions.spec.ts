@@ -1,4 +1,6 @@
 import {it, describe, expect, inject, beforeEachProviders} from 'angular2/testing';
+import {provide} from 'angular2/core';
+import {AppStore} from 'angular2-redux';
 import {UserActions, REQUEST_USERS, RECEIVE_USERS, CURRENT_USER} from "../../../app/actions/user-actions";
 import {User} from "../../../app/data/user";
 import {Http, HTTP_PROVIDERS, Response, ResponseOptions} from "angular2/http";
@@ -7,7 +9,8 @@ import {Observable} from "rxjs/Rx";
 export function main() {
   describe('UserActions', () => {
 
-    beforeEachProviders(() => [Http, HTTP_PROVIDERS, UserActions]);
+    const appStoreMock = { dispatch: null }
+    beforeEachProviders(() => [Http, HTTP_PROVIDERS, UserActions, provide(AppStore, {useValue: appStoreMock})]);
 
     it('fetchUsers should work', inject([Http, UserActions], (http, userActions) => {
 
@@ -16,7 +19,6 @@ export function main() {
         spyOn(http, "get").and.returnValue(Observable.from([
             new Response(new ResponseOptions({body: USERS}))
         ]));
-        const appStoreMock = { dispatch: null }
         spyOn(appStoreMock,"dispatch");
 
         const fetchUsers = userActions.fetchUsers();
@@ -45,7 +47,6 @@ export function main() {
             new Response(new ResponseOptions({body: USER}))
         ]));
 
-        const appStoreMock = { dispatch: null }
         spyOn(appStoreMock,"dispatch");
 
         const fetchUser = userActions.fetchUser(USER_ID);

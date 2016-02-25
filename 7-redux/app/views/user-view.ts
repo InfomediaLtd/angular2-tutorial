@@ -1,7 +1,6 @@
 import {Component, Input, ChangeDetectionStrategy} from "angular2/core";
 import {LabelWithValue} from "./label-with-value";
 import {User} from "../data/user";
-import { COMMON_DIRECTIVES } from "angular2/src/common/common_directives";
 
 @Component({
     selector: "user",
@@ -14,7 +13,7 @@ import { COMMON_DIRECTIVES } from "angular2/src/common/common_directives";
           <label-with-value label="Address" value="{{user.address.street}}, {{user.address.city}}"></label-with-value>
       </form>
     `,
-     directives: [COMMON_DIRECTIVES, LabelWithValue],
+    directives: [LabelWithValue],
     changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class UserView {
