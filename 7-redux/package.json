@@ -22,8 +22,8 @@
       "zone.js": "npm:zone.js@^0.5.15"
     },
     "devDependencies": {
-      "clean-css": "npm:clean-css@^3.4.8",
-      "typescript": "npm:typescript@^1.7.5"
+      "clean-css": "npm:clean-css@^3.4.10",
+      "typescript": "npm:typescript@^1.8"
     },
     "overrides": {
       "github:Dogfalo/materialize@0.97.5": {
@@ -83,6 +83,6 @@
     "rxjs": "^5.0.0-beta.2",
     "tslint": "^3.2.1",
     "tslint-eslint-rules": "^1.0.1",
-    "typescript": "^1.7.5"
+    "typescript": "^1.8"
   }
 }
