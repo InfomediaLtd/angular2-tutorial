@@ -2,9 +2,10 @@ import {
     it,
     describe,
     expect,
-    injectAsync,
+    inject,
     TestComponentBuilder as TCB,
-    ComponentFixture    
+    beforeEach,
+    ComponentFixture
 } from 'angular2/testing';
 import {Component} from 'angular2/core';
 import {User} from "../../../app/data/user";
@@ -20,9 +21,14 @@ export function main() {
 
     describe('UserView', () => {
 
-      it('renders successfully', injectAsync([TCB], (tcb:TCB) => {
-          return tcb
-          .createAsync(UserView).then((fixture:ComponentFixture) => {
+      let tcb:TCB;
+
+      beforeEach(inject([TCB], _tcb => {
+        tcb = _tcb
+      }));
+
+      it('renders successfully', () => {
+          return tcb.createAsync(UserView).then((fixture:ComponentFixture) => {
 
               const {componentInstance,nativeElement} = fixture.debugElement;
 
@@ -32,9 +38,9 @@ export function main() {
               fixture.detectChanges();
               expect(nativeElement.innerHTML).toContain("form");
           });
-      }));
+      });
 
-      it('renders user prperties', injectAsync([TCB], (tcb:TCB) => {
+      it('renders user prperties', () => {
             return tcb.createAsync(UserView).then((fixture:ComponentFixture) => {
 
                 const componentInstance:UserView = fixture.debugElement.componentInstance;
@@ -61,7 +67,7 @@ export function main() {
                 // should have found all values
                 expect(Array.from(toFind)).toEqual([]);
             });
-        }));
+        });
 
     });
 }
