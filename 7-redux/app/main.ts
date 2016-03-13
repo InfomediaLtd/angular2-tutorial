@@ -10,10 +10,10 @@ import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from "angular2
 
 import "angular2-materialize";
 
-import {AppStore,createAppStoreFactory} from "angular2-redux";
+import {AppStore,createAppStoreFactoryWithOptions} from "angular2-redux";
 import users from "./reducers/users-reducer";
 
-const appStoreFactory = createAppStoreFactory(users);
+const appStoreFactory = createAppStoreFactoryWithOptions({reducers:users,debug:true});
 
 bootstrap(AppComponent, [
     provide(AppStore, {useFactory: appStoreFactory}),
