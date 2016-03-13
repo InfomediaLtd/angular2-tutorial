@@ -3,6 +3,7 @@
     "dist": "gulp dist",
     "postinstall": "jspm install && npm run typings",
     "typings": "gulp typings && rm -rf typings && typings install",
+    "dev-bundle": "gulp dev-bundle",
     "serve": "live-server --no-browser",
     "test": "karma start karma.conf.js"
   },
@@ -57,6 +58,7 @@
   },
   "devDependencies": {
     "angular2": "^2.0.0-beta.7",
+    "chokidar": "^1.4.3",
     "es6-shim": "^0.34.1",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
@@ -70,6 +72,7 @@
     "gulp-uglify": "^1.5.1",
     "jasmine-core": "^2.4.1",
     "jspm": "^0.16.19",
+    "jspm-dev-builder": "^0.3.2",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.6",
@@ -83,6 +86,7 @@
     "rxjs": "^5.0.0-beta.2",
     "tslint": "^3.2.1",
     "tslint-eslint-rules": "^1.0.1",
-    "typescript": "^1.8"
+    "typescript": "^1.8",
+    "zone.js": "^0.6.2"
   }
 }
