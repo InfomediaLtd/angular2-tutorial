@@ -1,5 +1,6 @@
 import {Component} from "angular2/core"
-import {RouteConfig, ROUTER_DIRECTIVES, Location} from "angular2/router"
+import {Location} from 'angular2/platform/common';
+import {RouteConfig, ROUTER_DIRECTIVES} from 'angular2/router'
 import {UsersList} from "./components/users-list"
 import {UserComponent} from "./components/user-component";
 import {UsersListWithDetails} from "./components/users-list-with-details";

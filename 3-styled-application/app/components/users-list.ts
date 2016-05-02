@@ -11,7 +11,7 @@ import {RouterLink} from 'angular2/router'
         </div>
         <table *ngIf="users" class="table table-striped table-bordered table-hover">
             <tbody>
-                <tr *ngFor="#user of users">
+                <tr *ngFor="let user of users">
                     <td><a [routerLink]="['User', {id:user.id}]">{{user.name}}</a></td>
                 </tr>
             </tbody>

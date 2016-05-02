@@ -8,7 +8,7 @@ import {RouterLink} from 'angular2/router'
     template: `
         <div *ngIf="!users">Loading users...</div>
         <ul *ngIf="users">
-            <li *ngFor="#user of users">
+            <li *ngFor="let user of users">
                 <a [routerLink]="['User', {id:user.id}]">{{user.name}}</a>
             </li>
         </ul>

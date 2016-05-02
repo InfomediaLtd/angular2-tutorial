@@ -2,7 +2,7 @@ import {
     it,
     describe,
     expect,
-    injectAsync,
+    inject,
     TestComponentBuilder as TCB,
     ComponentFixture
 } from 'angular2/testing';
@@ -13,7 +13,7 @@ export function main() {
 
     describe('LabelWithValue', () => {
 
-      it('renders prperties', injectAsync([TCB], (tcb:TCB) => {
+      it('renders prperties', inject([TCB], (tcb:TCB) => {
             return tcb.createAsync(LabelWithValue).then((fixture:ComponentFixture) => {
 
                 const componentInstance:LabelWithValue = fixture.debugElement.componentInstance;

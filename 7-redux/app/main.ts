@@ -6,7 +6,8 @@ import {provide} from "angular2/core";
 import {AppComponent} from "./app-component";
 
 import {HTTP_PROVIDERS} from "angular2/http";
-import {ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from "angular2/router";
+import {LocationStrategy, HashLocationStrategy} from 'angular2/platform/common';
+import {ROUTER_PROVIDERS} from 'angular2/router';
 
 import "angular2-materialize";
 
