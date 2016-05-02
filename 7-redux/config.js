@@ -38,7 +38,7 @@ System.config({
     "clean-css": "npm:clean-css@3.4.12",
     "crypto": "github:jspm/nodelibs-crypto@0.1.0",
     "css": "github:systemjs/plugin-css@0.1.21",
-    "materialize": "github:Dogfalo/materialize@0.97.6",
+    "materialize": "npm:materialize-css@0.97.6",
     "redux": "npm:redux@3.5.2",
     "redux-thunk": "npm:redux-thunk@1.0.3",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
@@ -320,6 +320,10 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "stream": "github:jspm/nodelibs-stream@0.1.0",
       "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "npm:materialize-css@0.97.6": {
+      "css": "github:systemjs/plugin-css@0.1.21",
+      "jquery": "github:components/jquery@2.2.1"
     },
     "npm:miller-rabin@4.0.0": {
       "bn.js": "npm:bn.js@4.11.3",
