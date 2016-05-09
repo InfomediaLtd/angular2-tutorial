@@ -1,4 +1,4 @@
-import {Component, OnDestroy} from "angular2/core";
+import {Component, OnDestroy} from "@angular/core";
 import {SimpleList} from "angular2-simple-list";
 import {User} from "../data/user";
 import {AppStore} from "angular2-redux";

@@ -5,8 +5,8 @@ import {
     inject,
     TestComponentBuilder as TCB,
     ComponentFixture
-} from 'angular2/testing';
-import {Component} from 'angular2/core';
+} from '@angular/core/testing';
+import {Component} from '@angular/core';
 import {LabelWithValue} from "../../../app/views/label-with-value";
 
 export function main() {

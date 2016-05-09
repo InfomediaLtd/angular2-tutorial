@@ -25,14 +25,20 @@ System.config({
       "defaultExtension": "ts"
     },
     "materialize": {
-      "main": "js/materialize"
+      "main": "dist/js/materialize"
     }
   },
 
   map: {
-    "angular2": "npm:angular2@2.0.0-beta.17",
-    "angular2-materialize": "npm:angular2-materialize@1.4.1",
-    "angular2-redux": "npm:angular2-redux@1.3.1",
+    "@angular/common": "npm:@angular/common@2.0.0-rc.1",
+    "@angular/compiler": "npm:@angular/compiler@2.0.0-rc.1",
+    "@angular/core": "npm:@angular/core@2.0.0-rc.1",
+    "@angular/http": "npm:@angular/http@2.0.0-rc.1",
+    "@angular/platform-browser": "npm:@angular/platform-browser@2.0.0-rc.1",
+    "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@2.0.0-rc.1",
+    "@angular/router-deprecated": "npm:@angular/router-deprecated@2.0.0-rc.1",
+    "angular2-materialize": "npm:angular2-materialize@3.0.0",
+    "angular2-redux": "npm:angular2-redux@3.1.0",
     "angular2-simple-list": "github:InfomediaLtd/angular2-simple-list@master",
     "bootstrap": "github:twbs/bootstrap@3.3.6",
     "clean-css": "npm:clean-css@3.4.12",
@@ -42,13 +48,9 @@ System.config({
     "redux": "npm:redux@3.5.2",
     "redux-thunk": "npm:redux-thunk@1.0.3",
     "reflect-metadata": "npm:reflect-metadata@0.1.3",
-    "rxjs": "npm:rxjs@5.0.0-beta.7",
+    "rxjs": "npm:rxjs@5.0.0-beta.6",
     "typescript": "npm:typescript@1.8.10",
     "zone.js": "npm:zone.js@0.6.12",
-    "github:Dogfalo/materialize@0.97.6": {
-      "css": "github:systemjs/plugin-css@0.1.21",
-      "jquery": "github:components/jquery@2.2.1"
-    },
     "github:InfomediaLtd/angular2-simple-list@master": {
       "es6-promise": "npm:es6-promise@3.1.2"
     },
@@ -85,7 +87,7 @@ System.config({
       "path-browserify": "npm:path-browserify@0.0.0"
     },
     "github:jspm/nodelibs-process@0.1.2": {
-      "process": "npm:process@0.11.2"
+      "process": "npm:process@0.11.3"
     },
     "github:jspm/nodelibs-stream@0.1.0": {
       "stream-browserify": "npm:stream-browserify@1.0.0"
@@ -105,33 +107,51 @@ System.config({
     "github:twbs/bootstrap@3.3.6": {
       "jquery": "npm:jquery@2.2.3"
     },
+    "npm:@angular/common@2.0.0-rc.1": {
+      "@angular/core": "npm:@angular/core@2.0.0-rc.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:@angular/compiler@2.0.0-rc.1": {
+      "@angular/core": "npm:@angular/core@2.0.0-rc.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:@angular/core@2.0.0-rc.1": {
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "rxjs": "npm:rxjs@5.0.0-beta.6",
+      "zone.js": "npm:zone.js@0.6.12"
+    },
+    "npm:@angular/http@2.0.0-rc.1": {
+      "@angular/core": "npm:@angular/core@2.0.0-rc.1",
+      "rxjs": "npm:rxjs@5.0.0-beta.6"
+    },
+    "npm:@angular/platform-browser-dynamic@2.0.0-rc.1": {
+      "@angular/common": "npm:@angular/common@2.0.0-rc.1",
+      "@angular/compiler": "npm:@angular/compiler@2.0.0-rc.1",
+      "@angular/core": "npm:@angular/core@2.0.0-rc.1",
+      "@angular/platform-browser": "npm:@angular/platform-browser@2.0.0-rc.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:@angular/platform-browser@2.0.0-rc.1": {
+      "@angular/common": "npm:@angular/common@2.0.0-rc.1",
+      "@angular/compiler": "npm:@angular/compiler@2.0.0-rc.1",
+      "@angular/core": "npm:@angular/core@2.0.0-rc.1",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:@angular/router-deprecated@2.0.0-rc.1": {
+      "@angular/common": "npm:@angular/common@2.0.0-rc.1",
+      "@angular/core": "npm:@angular/core@2.0.0-rc.1",
+      "@angular/platform-browser": "npm:@angular/platform-browser@2.0.0-rc.1"
+    },
     "npm:amdefine@1.0.0": {
       "fs": "github:jspm/nodelibs-fs@0.1.2",
       "module": "github:jspm/nodelibs-module@0.1.0",
       "path": "github:jspm/nodelibs-path@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:angular2-materialize@1.4.1": {
-      "angular2": "npm:angular2@2.0.0-beta.17",
-      "jquery": "npm:jquery@2.2.3",
-      "materialize": "github:Dogfalo/materialize@0.97.6",
-      "reflect-metadata": "npm:reflect-metadata@0.1.3",
-      "rxjs": "npm:rxjs@5.0.0-beta.7",
-      "zone.js": "npm:zone.js@0.5.15"
-    },
-    "npm:angular2-redux@1.3.1": {
-      "angular2": "npm:angular2@2.0.0-beta.17",
-      "bootstrap": "github:twbs/bootstrap@3.3.6",
-      "css": "github:systemjs/plugin-css@0.1.21",
+    "npm:angular2-redux@3.1.0": {
       "redux": "npm:redux@3.5.2",
-      "redux-thunk": "npm:redux-thunk@1.0.3",
-      "reflect-metadata": "npm:reflect-metadata@0.1.3",
-      "zone.js": "npm:zone.js@0.5.15"
-    },
-    "npm:angular2@2.0.0-beta.17": {
-      "reflect-metadata": "npm:reflect-metadata@0.1.2",
-      "rxjs": "npm:rxjs@5.0.0-beta.7",
-      "zone.js": "npm:zone.js@0.6.12"
+      "redux-thunk": "npm:redux-thunk@2.0.1",
+      "rxjs": "npm:rxjs@5.0.0-beta.6"
     },
     "npm:asn1.js@4.6.0": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
@@ -311,7 +331,7 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:lodash@4.11.1": {
+    "npm:lodash@4.12.0": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -353,7 +373,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "systemjs-json": "github:systemjs/plugin-json@0.1.2"
     },
-    "npm:process@0.11.2": {
+    "npm:process@0.11.3": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
     },
     "npm:public-encrypt@4.0.0": {
@@ -384,15 +404,11 @@ System.config({
       "string_decoder": "npm:string_decoder@0.10.31"
     },
     "npm:redux@3.5.2": {
-      "lodash": "npm:lodash@4.11.1",
-      "lodash-es": "npm:lodash-es@4.11.1",
+      "lodash": "npm:lodash@4.12.0",
+      "lodash-es": "npm:lodash-es@4.12.0",
       "loose-envify": "npm:loose-envify@1.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2",
       "symbol-observable": "npm:symbol-observable@0.2.4"
-    },
-    "npm:reflect-metadata@0.1.2": {
-      "assert": "github:jspm/nodelibs-assert@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:reflect-metadata@0.1.3": {
       "assert": "github:jspm/nodelibs-assert@0.1.0",
@@ -402,10 +418,9 @@ System.config({
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:rxjs@5.0.0-beta.7": {
+    "npm:rxjs@5.0.0-beta.6": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
-      "process": "github:jspm/nodelibs-process@0.1.2",
-      "symbol-observable": "npm:symbol-observable@0.2.4"
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:sha.js@2.4.5": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
@@ -440,10 +455,6 @@ System.config({
     },
     "npm:vm-browserify@0.0.4": {
       "indexof": "npm:indexof@0.0.1"
-    },
-    "npm:zone.js@0.5.15": {
-      "es6-promise": "npm:es6-promise@3.1.2",
-      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:zone.js@0.6.12": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",

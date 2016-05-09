@@ -1,6 +1,6 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {UserService} from '../services/user-service';
-import {RouterLink} from 'angular2/router'
+import {RouterLink, ROUTER_DIRECTIVES} from '@angular/router-deprecated'
 
 @Component({
     selector: 'users',
@@ -13,7 +13,7 @@ import {RouterLink} from 'angular2/router'
             </li>
         </ul>
     `,
-    directives: [RouterLink]
+    directives: [RouterLink, ROUTER_DIRECTIVES]
 })
 export class UsersList {
 

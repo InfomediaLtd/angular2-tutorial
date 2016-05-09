@@ -6,12 +6,12 @@ import {
     TestComponentBuilder as TCB,
     ComponentFixture,
     beforeEachProviders
-} from 'angular2/testing';
-import {Component, provide, DirectiveResolver} from 'angular2/core';
-import {Location} from 'angular2/platform/common';
-import {Router, RouteRegistry, ROUTER_PRIMARY_COMPONENT, RouteConfig} from 'angular2/router';
-import {SpyLocation} from 'angular2/src/mock/location_mock';
-import {RootRouter} from 'angular2/src/router/router';
+} from '@angular/core/testing';
+import {Component, provide, DirectiveResolver} from '@angular/core';
+import {Location} from '@angular/common';
+import {Router, RouteRegistry, ROUTER_PRIMARY_COMPONENT, RouteConfig} from '@angular/router-deprecated';
+import {SpyLocation} from '@angular/src/mock/location_mock';
+import {RootRouter} from '@angular/src/router-deprecated/router';
 import {UsersList} from "../../../app/components/users-list";
 import {AppStore} from "angular2-redux";
 import {UserActions} from "../../../app/actions/user-actions";

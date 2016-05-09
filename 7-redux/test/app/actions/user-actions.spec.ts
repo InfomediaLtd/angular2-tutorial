@@ -1,9 +1,9 @@
-import {it, describe, expect, inject, beforeEachProviders} from 'angular2/testing';
-import {provide} from 'angular2/core';
+import {it, describe, expect, inject, beforeEachProviders} from '@angular/core/testing';
+import {provide} from '@angular/core';
 import {AppStore} from 'angular2-redux';
 import {UserActions, REQUEST_USERS, RECEIVE_USERS, CURRENT_USER} from "../../../app/actions/user-actions";
 import {User} from "../../../app/data/user";
-import {Http, HTTP_PROVIDERS, Response, ResponseOptions} from "angular2/http";
+import {Http, HTTP_PROVIDERS, Response, ResponseOptions} from "@angular/http";
 import {Observable} from "rxjs/Rx";
 
 export function main() {

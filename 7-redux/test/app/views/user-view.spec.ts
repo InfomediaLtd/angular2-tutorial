@@ -6,8 +6,8 @@ import {
     TestComponentBuilder as TCB,
     beforeEach,
     ComponentFixture
-} from 'angular2/testing';
-import {Component} from 'angular2/core';
+} from '@angular/core/testing';
+import {Component} from '@angular/core';
 import {User} from "../../../app/data/user";
 import {Address} from "../../../app/data/address";
 import {UserView} from "../../../app/views/user-view";

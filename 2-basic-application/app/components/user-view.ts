@@ -1,6 +1,6 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {UserService} from '../services/user-service';
-import {RouterLink, RouteParams} from 'angular2/router'
+import {RouterLink, RouteParams} from '@angular/router-deprecated'
 
 @Component({
     selector: 'user',

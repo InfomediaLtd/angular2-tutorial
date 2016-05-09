@@ -1,5 +1,5 @@
-import {Component, Input, OnDestroy} from "angular2/core";
-import {RouterLink, RouteParams} from "angular2/router"
+import {Component, Input, OnDestroy} from "@angular/core";
+import {RouterLink, RouteParams} from "@angular/router-deprecated"
 import {User} from "../data/user";
 import {UserView} from "../views/user-view";
 import {AppStore} from "angular2-redux";

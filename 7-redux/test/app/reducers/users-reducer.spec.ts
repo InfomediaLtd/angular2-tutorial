@@ -1,4 +1,4 @@
-import {it, describe, expect} from 'angular2/testing';
+import {it, describe, expect} from '@angular/core/testing';
 import reducer from "../../../app/reducers/users-reducer";
 import * as UserActions from "../../../app/actions/user-actions";
 

@@ -1,4 +1,4 @@
-import {Component, Input} from 'angular2/core';
+import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 import {LabelWithValue} from "./label-with-value";
 import {User} from "../data/user";
 
@@ -13,7 +13,8 @@ import {User} from "../data/user";
             <label-with-value label="Address" value="{{user.address.street}}, {{user.address.city}}"></label-with-value>
         </form>
     `,
-    directives: [LabelWithValue]
+    directives: [LabelWithValue],
+    changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class UserView {
 

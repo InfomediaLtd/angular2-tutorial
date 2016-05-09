@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {UserService} from '../services/user-service';
 import {SimpleList} from 'angular2-simple-list';
 

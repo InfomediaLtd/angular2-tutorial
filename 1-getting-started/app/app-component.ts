@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {RandomColorDirective} from "./random-color-directive";
 
 @Component({

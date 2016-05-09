@@ -33,9 +33,17 @@ module.exports = function (config) {
             // 'test/sanity_test.ts',
             //{pattern: 'node_modules/angular2/bundles/testing.dev.js', included: true, watched: false},
             //{pattern: 'node_modules/angular2/bundles/angular2.dev.js', included: true, watched: true},
-            {pattern: 'node_modules/angular2/bundles/angular2-polyfills.js', included: true, watched: false},
+
+            //{pattern: 'node_modules/angular2/bundles/angular2-polyfills.js', included: true, watched: false},
+            'node_modules/es6-shim/es6-shim.min.js',
+            'node_modules/zone.js/dist/zone.js',
+            'node_modules/reflect-metadata/Reflect.js',
+            // 'node_modules/zone.js/dist/async-test.js',
+            // 'node_modules/zone.js/dist/fake-async-test.js',
+            'node_modules/systemjs/dist/system.src.js',
+            
             {pattern: 'node_modules/phantomjs-polyfill/bind-polyfill.js', included: true, watched: false}, // PhantomJS
-            {pattern: 'node_modules/es6-shim/es6-shim.js', included: true, watched: false}, // PhantomJS & PhantomJS2
+            //{pattern: 'node_modules/es6-shim/es6-shim.js', included: true, watched: false}, // PhantomJS & PhantomJS2
             {pattern: 'test/karma-test-shim.js', included: true, watched: false},
 
             // {pattern: 'node_modules/rxjs/bundles/Rx.js', included: true, watched: true},

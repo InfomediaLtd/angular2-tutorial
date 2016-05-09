@@ -1,4 +1,4 @@
-import {Component, OnDestroy} from "angular2/core";
+import {Component, OnDestroy} from "@angular/core";
 import {SimpleList} from "angular2-simple-list";
 import {UserView} from "../views/user-view";
 import {User} from "../data/user";
