@@ -7,10 +7,32 @@
     "experimentalDecorators": true,
     "removeComments": false,
     "noImplicitAny": false,
-    "outDir": "build"
+    "outDir": "build",
+    "baseUrl": "./",
+    "paths": {
+      "@angular/*": [
+        "jspm_packages/npm/@angular/*@2.1.2"
+      ],
+      "@angular/router": [
+        "jspm_packages/npm/@angular/router@3.1.2"
+      ],
+      "rxjs/*": [
+        "jspm_packages/npm/rxjs@5.0.0-beta.12/*"
+      ]
+    },
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "types": [
+      "es6-shim"
+    ]
   },
+  "include": [
+    "app/**/*.ts"
+  ],
   "exclude": [
+    "node_modules",
     "jspm_packages",
-    "node_modules"
+    "dist"
   ]
 }

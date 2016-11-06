@@ -1,12 +1,11 @@
 import {Component} from '@angular/core';
-import {UserService} from '../services/user-service';
-import {RouterLink, RouteParams} from '@angular/router-deprecated'
+import {ActivatedRoute, Params} from "@angular/router";
+import {UserService} from '../services/user.service';
 
 @Component({
     selector: 'user',
-    providers: [UserService],
     template: `
-        <a [routerLink]="['Users']">Show all users</a>
+        <a [routerLink]="['/users']">Show all users</a>
         <hr/>
 
         <div *ngIf="user">
@@ -16,16 +15,17 @@ import {RouterLink, RouteParams} from '@angular/router-deprecated'
             <div><label>Email: </label><span>{{user.email}}</span></div>
             <div><label>Address: </label><span>{{user.address.street}}, {{user.address.city}}</span></div>
         </div>
-    `,
-    directives: [RouterLink]
+    `
 })
 export class UserView {
 
     private user;
 
-    constructor(service:UserService, params: RouteParams) {
-        var userId = params.get("id");
-        service.get(userId).subscribe((user) =>  { this.user = user; });
+    constructor(service:UserService, route:ActivatedRoute) {
+        route.params.forEach((params: Params) => {
+            var userId = params["id"];
+            service.get(userId).subscribe(user =>  this.user = user);
+        });
     }
 
 }
