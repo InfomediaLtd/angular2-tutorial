@@ -28,7 +28,7 @@ System.config({
     "crypto": "github:jspm/nodelibs-crypto@0.1.0",
     "reflect-metadata": "npm:reflect-metadata@0.1.8",
     "rxjs": "npm:rxjs@5.0.0-beta.12",
-    "typescript": "npm:typescript@1.8.10",
+    "typescript": "npm:typescript@2.0.7",
     "zone.js": "npm:zone.js@0.6.26",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.4.1"
@@ -45,6 +45,24 @@ System.config({
     "github:jspm/nodelibs-events@0.1.1": {
       "events": "npm:events@1.0.2"
     },
+    "github:jspm/nodelibs-http@1.7.1": {
+      "Base64": "npm:Base64@0.2.1",
+      "events": "github:jspm/nodelibs-events@0.1.1",
+      "inherits": "npm:inherits@2.0.1",
+      "stream": "github:jspm/nodelibs-stream@0.1.0",
+      "url": "github:jspm/nodelibs-url@0.1.0",
+      "util": "github:jspm/nodelibs-util@0.1.0"
+    },
+    "github:jspm/nodelibs-net@0.1.2": {
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "crypto": "github:jspm/nodelibs-crypto@0.1.0",
+      "http": "github:jspm/nodelibs-http@1.7.1",
+      "net": "github:jspm/nodelibs-net@0.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "stream": "github:jspm/nodelibs-stream@0.1.0",
+      "timers": "github:jspm/nodelibs-timers@0.1.0",
+      "util": "github:jspm/nodelibs-util@0.1.0"
+    },
     "github:jspm/nodelibs-os@0.1.0": {
       "os-browserify": "npm:os-browserify@0.1.2"
     },
@@ -59,6 +77,9 @@ System.config({
     },
     "github:jspm/nodelibs-timers@0.1.0": {
       "timers-browserify": "npm:timers-browserify@1.4.2"
+    },
+    "github:jspm/nodelibs-url@0.1.0": {
+      "url": "npm:url@0.10.3"
     },
     "github:jspm/nodelibs-util@0.1.0": {
       "util": "npm:util@0.10.3"
@@ -274,6 +295,9 @@ System.config({
       "parse-asn1": "npm:parse-asn1@5.0.0",
       "randombytes": "npm:randombytes@2.0.3"
     },
+    "npm:punycode@1.3.2": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:randombytes@2.0.3": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "crypto": "github:jspm/nodelibs-crypto@0.1.0",
@@ -315,8 +339,16 @@ System.config({
     "npm:timers-browserify@1.4.2": {
       "process": "npm:process@0.11.9"
     },
-    "npm:typescript@1.8.10": {
+    "npm:typescript@2.0.7": {
+      "crypto": "github:jspm/nodelibs-crypto@0.1.0",
+      "net": "github:jspm/nodelibs-net@0.1.2",
       "os": "github:jspm/nodelibs-os@0.1.0"
+    },
+    "npm:url@0.10.3": {
+      "assert": "github:jspm/nodelibs-assert@0.1.0",
+      "punycode": "npm:punycode@1.3.2",
+      "querystring": "npm:querystring@0.2.0",
+      "util": "github:jspm/nodelibs-util@0.1.0"
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
