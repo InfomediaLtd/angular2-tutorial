@@ -1,62 +1,35 @@
 import {Component} from '@angular/core';
-import {UserService} from '../services/user-service';
-import {RouterLink, RouteParams} from '@angular/router-deprecated'
+import {ActivatedRoute, Params} from "@angular/router";
+import {UserService} from '../services/user.service';
+
+import style from "./user-view.css!text"
 
 @Component({
     selector: 'user',
-    styles: [` * { font-size: 110%; } `],
-    providers: [UserService],
+    styles: [style],
     template: `
-        <div *ngIf="!user">
-            Loading user...
+        <div>
+            <md-card *ngIf="user">
+                <md-card-title>{{user.name}}</md-card-title>   
+                <p><label>ID: </label><span>{{user.id}}</span></p>
+                <p><label>Username: </label><span>{{user.username}}</span></p>
+                <p><label>Email: </label><span>{{user.email}}</span></p>
+                <p><label>Address: </label><span>{{user.address.street}}, {{user.address.city}}</span></p>
+            </md-card>
+            <br/>
+            <a [routerLink]="['/users']">Show all users</a>
         </div>
-        <div *ngIf="user">
-            <form class="form-horizontal">
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">ID</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.id}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Name</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.name}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Username</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.username}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.email}}</p>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-2 control-label">Address</label>
-                    <div class="col-sm-10">
-                        <p class="form-control-static">{{user.address.street}}, {{user.address.city}}</p>
-                    </div>
-                </div>
-            </form>
-            <hr/>
-            <a [routerLink]="['Users']">Show all users</a>
-        </div>
-
-    `,
-    directives: [RouterLink]
+    `
 })
 export class UserView {
 
     private user;
 
-    constructor(service:UserService, params: RouteParams) {
-        var userId = params.get("id");
-        service.get(userId).subscribe((user) =>  { this.user = user; });
+    constructor(service:UserService, route:ActivatedRoute) {
+        route.params.forEach((params: Params) => {
+            var userId = params["id"];
+            service.get(userId).subscribe(user =>  this.user = user);
+        });
     }
 
 }

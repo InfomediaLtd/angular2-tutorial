@@ -1,30 +1,25 @@
 import {Component} from '@angular/core';
-import {UserService} from '../services/user-service';
-import {RouterLink} from '@angular/router-deprecated'
+import {UserService} from '../services/user.service';
 
 @Component({
     selector: 'users',
-    providers: [UserService],
     template: `
-        <div *ngIf="!users">
-            Loading users...
+        <div>
+            <div *ngIf="!users">Loading users...</div>
+            <md-list *ngIf="users">
+                <md-list-item *ngFor="let user of users">
+                    <a [routerLink]="['/user', user.id]">{{user.name}}</a>
+                </md-list-item>
+            </md-list>
         </div>
-        <table *ngIf="users" class="table table-striped table-bordered table-hover">
-            <tbody>
-                <tr *ngFor="let user of users">
-                    <td><a [routerLink]="['User', {id:user.id}]">{{user.name}}</a></td>
-                </tr>
-            </tbody>
-        </table>
-    `,
-    directives: [RouterLink]
+    `
 })
 export class UsersList {
 
     private users:any[] = null;
 
     constructor(service:UserService) {
-        service.list().subscribe((users) =>  { this.users = users; });
+        service.list().subscribe(users =>  this.users = users);
     }
 
 }
