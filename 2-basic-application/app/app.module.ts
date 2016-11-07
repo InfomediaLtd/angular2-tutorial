@@ -6,18 +6,13 @@ import {AppComponent} from './app.component'
 import {UsersList} from "./components/users-list"
 import {UserView} from "./components/user-view"
 import {UserService} from "./services/user.service"
+import {appRoutes} from "./app.routes"
 
 @NgModule({
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot([
-      {path: '', redirectTo: '/users', pathMatch: 'full'},
-      {path: 'users', component: UsersList},
-      {path: 'user/:id', component: UserView}
-    ], {
-      useHash: true
-    })
+    RouterModule.forRoot(appRoutes, {useHash: true})
   ],
   declarations: [AppComponent,UsersList,UserView],
   providers: [UserService],
