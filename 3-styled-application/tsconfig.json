@@ -27,7 +27,8 @@
       "./node_modules/@types"
     ],
     "types": [
-      "es6-shim"
+      "es6-shim",
+      "hammerjs"
     ]
   },
   "include": [
