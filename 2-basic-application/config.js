@@ -23,11 +23,14 @@ System.config({
     "@angular/common": "npm:@angular/common@2.1.2",
     "@angular/compiler": "npm:@angular/compiler@2.1.2",
     "@angular/core": "npm:@angular/core@2.1.2",
+    "@angular/forms": "npm:@angular/forms@2.1.2",
     "@angular/http": "npm:@angular/http@2.1.2",
+    "@angular/material": "npm:@angular/material@2.0.0-alpha.9-3",
     "@angular/platform-browser": "npm:@angular/platform-browser@2.1.2",
     "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@2.1.2",
     "@angular/router": "npm:@angular/router@3.1.2",
     "crypto": "github:jspm/nodelibs-crypto@0.1.0",
+    "css": "github:systemjs/plugin-css@0.1.32",
     "reflect-metadata": "npm:reflect-metadata@0.1.8",
     "rxjs": "npm:rxjs@5.0.0-beta.12",
     "typescript": "npm:typescript@2.0.7",
@@ -101,10 +104,22 @@ System.config({
       "rxjs": "npm:rxjs@5.0.0-beta.12",
       "zone.js": "npm:zone.js@0.6.26"
     },
+    "npm:@angular/forms@2.1.2": {
+      "@angular/common": "npm:@angular/common@2.1.2",
+      "@angular/core": "npm:@angular/core@2.1.2",
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:@angular/http@2.1.2": {
       "@angular/core": "npm:@angular/core@2.1.2",
       "@angular/platform-browser": "npm:@angular/platform-browser@2.1.2",
       "rxjs": "npm:rxjs@5.0.0-beta.12"
+    },
+    "npm:@angular/material@2.0.0-alpha.9-3": {
+      "@angular/common": "npm:@angular/common@2.1.2",
+      "@angular/core": "npm:@angular/core@2.1.2",
+      "@types/hammerjs": "npm:@types/hammerjs@2.0.33",
+      "buffer": "github:jspm/nodelibs-buffer@0.1.0",
+      "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:@angular/platform-browser-dynamic@2.1.2": {
       "@angular/common": "npm:@angular/common@2.1.2",
@@ -124,7 +139,7 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "rxjs": "npm:rxjs@5.0.0-beta.12"
     },
-    "npm:asn1.js@4.8.1": {
+    "npm:asn1.js@4.9.0": {
       "bn.js": "npm:bn.js@4.11.6",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "inherits": "npm:inherits@2.0.1",
@@ -281,7 +296,7 @@ System.config({
       "os": "github:jspm/nodelibs-os@0.1.0"
     },
     "npm:parse-asn1@5.0.0": {
-      "asn1.js": "npm:asn1.js@4.8.1",
+      "asn1.js": "npm:asn1.js@4.9.0",
       "browserify-aes": "npm:browserify-aes@1.0.6",
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "create-hash": "npm:create-hash@1.1.2",

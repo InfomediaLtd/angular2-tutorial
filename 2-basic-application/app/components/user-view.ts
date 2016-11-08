@@ -5,15 +5,16 @@ import {UserService} from '../services/user.service';
 @Component({
     selector: 'user',
     template: `
-        <a [routerLink]="['/users']">Show all users</a>
-        <hr/>
-
-        <div *ngIf="user">
-            <div><label>ID: </label><span>{{user.id}}</span></div>
-            <div><label>Name: </label><span>{{user.name}}</span></div>
-            <div><label>Username: </label><span>{{user.username}}</span></div>
-            <div><label>Email: </label><span>{{user.email}}</span></div>
-            <div><label>Address: </label><span>{{user.address.street}}, {{user.address.city}}</span></div>
+        <div>
+            <md-card *ngIf="user">
+                <md-card-title>{{user.name}}</md-card-title>  
+                <p><label>ID: </label><span>{{user.id}}</span></p>
+                <p><label>Username: </label><span>{{user.username}}</span></p>
+                <p><label>Email: </label><span>{{user.email}}</span></p>
+                <p><label>Address: </label><span>{{user.address.street}}, {{user.address.city}}</span></p>
+            </md-card>
+            <br/>
+            <a [routerLink]="['/users']">Show all users</a>
         </div>
     `
 })
