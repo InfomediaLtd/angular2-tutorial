@@ -1,87 +1,32 @@
 {
-  "scripts": {
-    "dist": "gulp dist",
-    "postinstall": "jspm install && npm run typings",
-    "typings": "gulp typings && rm -rf typings && typings install",
-    "dev-bundle": "gulp dev-bundle",
-    "serve": "live-server --no-browser",
-    "test": "karma start karma.conf.js"
-  },
   "jspm": {
     "dependencies": {
-      "@angular/common": "npm:@angular/common@^2.0.0-rc.1",
-      "@angular/compiler": "npm:@angular/compiler@^2.0.0-rc.1",
-      "@angular/core": "npm:@angular/core@^2.0.0-rc.1",
-      "@angular/http": "npm:@angular/http@^2.0.0-rc.1",
-      "@angular/platform-browser": "npm:@angular/platform-browser@^2.0.0-rc.1",
-      "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@^2.0.0-rc.1",
-      "@angular/router-deprecated": "npm:@angular/router-deprecated@^2.0.0-rc.1",
-      "angular2-materialize": "npm:angular2-materialize@^3.0.0",
-      "angular2-redux": "npm:angular2-redux@^3.0.0",
+      "@angular/common": "npm:@angular/common@^2.1.2",
+      "@angular/compiler": "npm:@angular/compiler@^2.1.2",
+      "@angular/core": "npm:@angular/core@^2.1.2",
+      "@angular/forms": "npm:@angular/forms@^2.1.2",
+      "@angular/http": "npm:@angular/http@^2.1.2",
+      "@angular/material": "npm:@angular/material@^2.0.0-alpha.9-3",
+      "@angular/platform-browser": "npm:@angular/platform-browser@^2.1.2",
+      "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@^2.1.2",
+      "@angular/router": "npm:@angular/router@^3.1.2",
+      "angular2-redux": "npm:angular2-redux@^4.0.0",
       "angular2-simple-list": "github:InfomediaLtd/angular2-simple-list@master",
-      "bootstrap": "github:twbs/bootstrap@^3.3.5",
       "crypto": "github:jspm/nodelibs-crypto@^0.1.0",
-      "css": "github:systemjs/plugin-css@^0.1.20",
-      "materialize": "npm:materialize-css@^0.97.6",
-      "redux": "npm:redux@^3.0.4",
-      "redux-thunk": "npm:redux-thunk@^1.0.0",
+      "css": "github:systemjs/plugin-css@^0.1.32",
+      "redux": "npm:redux@^3.6.0",
+      "redux-thunk": "npm:redux-thunk@^2.1.0",
       "reflect-metadata": "npm:reflect-metadata@^0.1.3",
-      "rxjs": "npm:rxjs@5.0.0-beta.6",
-      "zone.js": "npm:zone.js@^0.6.12"
+      "rxjs": "npm:rxjs@5.0.0-beta.12",
+      "text": "github:systemjs/plugin-text@^0.0.9",
+      "zone.js": "npm:zone.js@^0.6.16"
     },
     "devDependencies": {
-      "clean-css": "npm:clean-css@^3.4.10",
-      "typescript": "npm:typescript@^1.8.9"
+      "typescript": "npm:typescript@^2.0.7"
     }
   },
-  "typingsDependencies": {
-    "registry": [
-      "redux",
-      "redux-thunk"
-    ],
-    "file": [
-      "jspm_packages/npm/angular2-redux@VERSION/dist/index.d.ts",
-      "jspm_packages/github/InfomediaLtd/angular2-simple-list@VERSION/app/index.d.ts",
-      "jspm_packages/npm/angular2-materialize@VERSION/dist/index.d.ts"
-    ]
-  },
   "devDependencies": {
-    "@angular/common": "^2.0.0-rc.1",
-    "@angular/compiler": "^2.0.0-rc.1",
-    "@angular/core": "^2.0.0-rc.1",
-    "@angular/http": "^2.0.0-rc.1",
-    "@angular/platform-browser": "^2.0.0-rc.1",
-    "@angular/platform-browser-dynamic": "^2.0.0-rc.1",
-    "@angular/router": "^0.2.0",
-    "chokidar": "^1.4.3",
-    "es6-shim": "^0.34.1",
-    "gulp": "^3.9.0",
-    "gulp-concat": "^2.6.0",
-    "gulp-insert": "^0.5.0",
-    "gulp-replace": "^0.5.4",
-    "gulp-rimraf": "^0.2.0",
-    "gulp-run": "^1.6.12",
-    "gulp-shell": "^0.5.1",
-    "gulp-tslint": "^4.2.2",
-    "gulp-tslint-stylish": "^1.1.1",
-    "gulp-uglify": "^1.5.1",
-    "jasmine-core": "^2.4.1",
-    "jspm": "^0.16.19",
-    "jspm-dev-builder": "^0.3.2",
-    "karma": "^0.13.19",
-    "karma-chrome-launcher": "^0.2.2",
-    "karma-jasmine": "^0.3.6",
-    "karma-jspm": "^2.0.2",
-    "karma-mocha-reporter": "^1.1.5",
-    "karma-phantomjs-launcher": "^0.2.3",
-    "phantomjs": "^1.9.19",
-    "phantomjs-polyfill": "0.0.1",
-    "require-dir": "^0.3.0",
-    "run-sequence": "^1.1.5",
-    "rxjs": "5.0.0-beta.6",
-    "tslint": "^3.2.1",
-    "tslint-eslint-rules": "^1.0.1",
-    "typescript": "^1.8",
-    "zone.js": "^0.6.12"
+    "@types/es6-shim": "^0.31.32",
+    "@types/hammerjs": "^2.0.33"
   }
 }

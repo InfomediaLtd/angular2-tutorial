@@ -1,4 +1,4 @@
-import * as UserActions from "../actions/user-actions";
+import * as UserActions from '../actions/user.actions';
 
 export default (state = {}, action:any = {}) => {
     switch (action.type) {
@@ -6,16 +6,12 @@ export default (state = {}, action:any = {}) => {
             return Object.assign({}, state, {isFetching: true});
         case UserActions.RECEIVE_USERS:
             return Object.assign({}, state, {isFetching: false, users: action.users});
-        case UserActions.CURRENT_USER:
+        case UserActions.CURRENT_USER: 
             return Object.assign({}, state, {current: action.current});
-        default:
+        default: 
             return state;
     }
 };
 
-export function getUsers(state) {
-  return state.users;
-}
-export function getCurrentUser(state) {
-  return state.current;
-}
+export function getUsers(state) { return state.users }
+export function getCurrentUser(state) { return state.current }
