@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
-import {UserService} from '../services/user-service';
-import {SimpleList} from 'angular2-simple-list';
+import {UserService} from '../services/user.service';
 import {User} from "../data/user";
 
 @Component({
@@ -12,18 +11,16 @@ import {User} from "../data/user";
             [content]="getContent"
             [link]="getLink">
         </simple-list>
-    `,
-    directives: [SimpleList]
+    `
 })
 export class UsersList {
-
     public users:User[];
 
-    constructor(service:UserService) {
-        service.list().subscribe(users => this.users = users );
-    }
+    private getContent:(user:User)=>string = ({name}) => name;
+    private getLink   :(user:User)=>any[]  = ({id}) => ['/user', id];
 
-    getContent(user:User):string { return user.name; }
-    getLink(user):any[] { return ['User', {id:user.id}]; }
+    constructor(service:UserService) {
+   		service.list().subscribe(users => this.users = users );
+  	}
 
 }

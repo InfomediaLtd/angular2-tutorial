@@ -1,8 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {UserService} from '../services/user-service';
+import {UserService} from '../services/user.service';
 import {UserView} from "./user-view";
-import {RouterLink, RouteParams} from '@angular/router-deprecated'
-import {User} from "../data/user";
+import {ActivatedRoute, Params} from '@angular/router'
 
 @Component({
     selector: 'user',
@@ -10,19 +9,23 @@ import {User} from "../data/user";
     template: `
         <div *ngIf="!user">Loading user...</div>
         <div *ngIf="user">
-            <user [user]="user"></user>
+            <user-view [user]="user"></user-view>
             <hr/>
-            <a [routerLink]="['Users']">Show all users</a>
+            <a [routerLink]="['/users']">Show all users</a>
         </div>
-    `,
-    directives: [RouterLink, UserView]
+    `
 })
 export class UserComponent {
 
-    @Input() private user:User;
+    @Input() private user:any;
 
-    constructor(service:UserService, params: RouteParams) {
-      service.get(params.get("id")).subscribe(user => this.user = user);
+    constructor(service:UserService, route: ActivatedRoute) {
+        route.params.forEach((params: Params) => {
+            var userId = params["id"];
+            if (userId) {
+                service.get(userId).subscribe(user =>  this.user = user);
+            }
+        });
     }
 
 }

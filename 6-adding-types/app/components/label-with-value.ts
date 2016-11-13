@@ -2,14 +2,7 @@ import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 
 @Component({
     selector: 'label-with-value',
-    template: `
-        <div class="form-group">
-            <label class="col-sm-2 control-label">{{label}}</label>
-            <div class="col-sm-10">
-                <p class="form-control-static">{{value}}</p>
-            </div>
-        </div>
-    `,
+    template: `<p><label>{{label}}: </label><span>{{value}}</span></p>`,
     changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class LabelWithValue {

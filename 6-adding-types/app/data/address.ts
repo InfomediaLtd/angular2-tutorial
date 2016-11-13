@@ -1,4 +1,4 @@
-export class Address {
-    public street:string;
-    public city:string;
+export interface Address {
+    street:string;
+    city:string;
 }
