@@ -1,4 +1,8 @@
 {
+  "scripts": {
+    "postinstall": "jspm install && npm run update-typings",
+    "update-typings": "node update-typings.js"
+  },
   "jspm": {
     "dependencies": {
       "@angular/common": "npm:@angular/common@^2.1.2",
