@@ -1,18 +1,23 @@
-import {it, describe, expect, inject, beforeEachProviders} from '@angular/core/testing';
-import {provide} from '@angular/core';
+import {TestBed, inject} from '@angular/core/testing';
 import {AppStore} from 'angular2-redux';
-import {UserActions, REQUEST_USERS, RECEIVE_USERS, CURRENT_USER} from "../../../app/actions/user-actions";
+import {UserActions, REQUEST_USERS, RECEIVE_USERS, CURRENT_USER} from "../../../app/actions/user.actions";
+import {UserService} from "../../../app/services/user.service";
 import {User} from "../../../app/data/user";
-import {Http, HTTP_PROVIDERS, Response, ResponseOptions} from "@angular/http";
-import {Observable} from "rxjs/Rx";
+import {Http, HttpModule, Response, ResponseOptions} from "@angular/http";
+import {Observable} from "rxjs";
 
-export function main() {
-  describe('UserActions', () => {
+describe('UserActions', () => {
 
     const appStoreMock = { dispatch: null }
-    beforeEachProviders(() => [Http, HTTP_PROVIDERS, UserActions, provide(AppStore, {useValue: appStoreMock})]);
 
-    it('fetchUsers should work', inject([Http, UserActions], (http, userActions) => {
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [HttpModule],
+            providers: [UserService, UserActions, { provide: AppStore, useValue: appStoreMock}],
+        });
+    });  
+
+    it('fetchUsers should work', inject([Http, UserActions], (http: Http, userActions:UserActions) => {
 
         const USERS = [<User>{name:"name1"}];
 
@@ -39,7 +44,8 @@ export function main() {
 
     }));
 
-    it('fetchUser should work', inject([Http, UserActions], (http, userActions) => {
+    it('fetchUser should work', inject([Http, UserActions], (http: Http, userActions:UserActions) => {
+
         const USER_ID = "111";
         const USER = <User>{name:"name1"};
 
@@ -67,19 +73,18 @@ export function main() {
     }));
 
     it('requestUsers should work', () =>
-        expect(new UserActions(null).requestUsers().type).toEqual(REQUEST_USERS));
+        expect(new UserActions(null,null).requestUsers().type).toEqual(REQUEST_USERS));
 
     it('receiveUsers should work', () => {
         const USERS = [<User>{name:"name1"}];
-        expect(new UserActions(null).receiveUsers(USERS).type).toEqual(RECEIVE_USERS);
-        expect(new UserActions(null).receiveUsers(USERS).users).toEqual(USERS);
+        expect(new UserActions(null,null).receiveUsers(USERS).type).toEqual(RECEIVE_USERS);
+        expect(new UserActions(null,null).receiveUsers(USERS).users).toEqual(USERS);
     });
 
     it('setCurrentUser should work', () => {
         const USER = <User>{name:"current1"};
-        expect(new UserActions(null).setCurrentUser(USER).type).toEqual(CURRENT_USER);
-        expect(new UserActions(null).setCurrentUser(USER).current).toEqual(USER);
+        expect(new UserActions(null,null).setCurrentUser(USER).type).toEqual(CURRENT_USER);
+        expect(new UserActions(null,null).setCurrentUser(USER).current).toEqual(USER);
     });
 
-  });
-}
+});

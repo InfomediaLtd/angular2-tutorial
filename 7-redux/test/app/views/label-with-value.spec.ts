@@ -1,31 +1,38 @@
-import {
-    it,
-    describe,
-    expect,
-    inject,
-    TestComponentBuilder as TCB,
-    ComponentFixture
-} from '@angular/core/testing';
-import {Component} from '@angular/core';
-import {LabelWithValue} from "../../../app/views/label-with-value";
+import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from '@angular/platform-browser-dynamic/testing'; 
+import {ComponentFixture, TestBed, async} from '@angular/core/testing';
+import {Component, DebugElement, ChangeDetectionStrategy}    from '@angular/core';
+import {By}              from '@angular/platform-browser';
+import {LabelWithValue} from "../../../app/views/label-with-value.view";
 
-export function main() {
+let comp:    TestComponent;
+let fixture: ComponentFixture<TestComponent>;
 
-    describe('LabelWithValue', () => {
+describe('LabelWithValue', () => {
 
-      it('renders prperties', inject([TCB], (tcb:TCB) => {
-            return tcb.createAsync(LabelWithValue).then((fixture:ComponentFixture) => {
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [TestComponent, LabelWithValue],
+        });
+        fixture = TestBed.createComponent(TestComponent);
+        comp = fixture.componentInstance;
+    });    
 
-                const componentInstance:LabelWithValue = fixture.debugElement.componentInstance;
-                componentInstance.label = "testLabel";
-                componentInstance.value = "testValue";
-                fixture.detectChanges();
-
-                const nativeElement:HTMLElement = fixture.debugElement.nativeElement;
-                const text = nativeElement.textContent.replace(/\n/g,"").replace(/ /g,"");
-                expect(text).toEqual("testLabeltestValue");
-            });
-        }));
-
+    it('Shows label and value', () => {
+        fixture.detectChanges();
+        expect(getTextContent(fixture)).toEqual('bla: 123');
     });
+
+});
+
+function getTextContent(fixture) {
+    const de = fixture.debugElement.query(By.css('p'));
+    const el = de.nativeElement;
+    return el.textContent;  
+}
+
+@Component({
+  selector: 'test-component',
+  template: `<label-with-value [label]="'bla'" [value]="'123'"></label-with-value>`
+})
+class TestComponent {
 }

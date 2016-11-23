@@ -10,8 +10,6 @@ __karma__.loaded = function () {
 System.import('zone.js')
     .then(function() {
         Promise.all([
-            // System.import('core-js'),
-            // System.import('es6-shim'),
             System.import('reflect-metadata/Reflect.js'),
             System.import('zone.js/dist/async-test.js'),
             System.import('zone.js/dist/long-stack-trace-zone.js'),
@@ -65,5 +63,5 @@ function onlyAppFiles(path) {
 
 function remapPath(path) {
     // console.log("Remapping " + path);
-    return path.replace("/base","");
+    return path;//.replace("/base","");
 }

@@ -7,7 +7,7 @@ import {Component, Input, ChangeDetectionStrategy} from '@angular/core';
 })
 export class LabelWithValue {
 
-    @Input() private label:string;
-    @Input() private value:string;
+    @Input() public label:string;
+    @Input() public value:string;
 
 }
