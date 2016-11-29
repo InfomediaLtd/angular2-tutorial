@@ -18,5 +18,5 @@ import {User} from "../data/user";
     changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class UserView {
-    @Input() private user:User;
+    @Input() public user:User;
 }

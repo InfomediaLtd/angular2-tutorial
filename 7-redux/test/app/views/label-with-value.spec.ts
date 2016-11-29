@@ -4,7 +4,6 @@ import {Component, DebugElement, ChangeDetectionStrategy}    from '@angular/core
 import {By}              from '@angular/platform-browser';
 import {LabelWithValue} from "../../../app/views/label-with-value.view";
 
-let comp:    TestComponent;
 let fixture: ComponentFixture<TestComponent>;
 
 describe('LabelWithValue', () => {
@@ -14,10 +13,9 @@ describe('LabelWithValue', () => {
             declarations: [TestComponent, LabelWithValue],
         });
         fixture = TestBed.createComponent(TestComponent);
-        comp = fixture.componentInstance;
     });    
 
-    it('Shows label and value', () => {
+    it('shows label and value', () => {
         fixture.detectChanges();
         expect(getTextContent(fixture)).toEqual('bla: 123');
     });
