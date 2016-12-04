@@ -6,14 +6,28 @@ var replace = require('gulp-replace');
 var insert = require('gulp-insert');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var tslint = require("gulp-tslint");
+var tslintStylish = require('tslint-stylish');
 
 var paths = {
     dist: './dist',
+    sources: "app/**/*.ts",
     sourcesToCopy: ['index.html'],
     targetHTML: './dist/index.html',
     targetJS: 'index.js',
     targetMinifiedJS: 'index.min.js'
 };
+
+// Lint the sources
+gulp.task("lint", function() {
+    return gulp.src(paths.sources)
+        .pipe(tslint())
+        .pipe(tslint.report(tslintStylish, {
+          emitError: false,
+          sort: true,
+          bell: true
+        }));
+});
 
 // Delete the dist directory
 gulp.task('clean', function() {
@@ -55,6 +69,7 @@ gulp.task('update-target-html', function(){
 // entry point - run tasks in a sequence
 gulp.task('default', function(callback) {
     runSequence(
+        //"lint",
         'clean',
         'copy',
         'bundle',

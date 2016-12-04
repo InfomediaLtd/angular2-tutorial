@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "postinstall": "jspm install"
+    "postinstall": "jspm install",
+    "lint": "tslint ./app/**/*.ts -s node_modules/tslint-stylish -t stylish"
   },
   "jspm": {
     "dependencies": {
@@ -39,6 +40,8 @@
     "gulp-insert": "^0.5.0",
     "gulp-replace": "^0.5.4",
     "gulp-shell": "^0.5.2",
+    "gulp-tslint": "^7.0.1",
+    "gulp-tslint-stylish": "^1.1.1",
     "gulp-uglify": "^2.0.0",
     "jasmine-core": "^2.5.2",
     "jspm": "^0.16.48",
@@ -47,6 +50,10 @@
     "karma-jasmine": "^1.0.2",
     "karma-jspm": "^2.2.0",
     "karma-mocha-reporter": "^2.2.1",
-    "run-sequence": "^1.2.2"
+    "run-sequence": "^1.2.2",
+    "tslint": "^4.0.2",
+    "tslint-eslint-rules": "^3.1.0",
+    "tslint-stylish": "^2.1.0-beta",
+    "typescript": "^2.0.10"
   }
 }
