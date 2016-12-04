@@ -1,6 +1,6 @@
 import {TestBed, inject} from '@angular/core/testing';
 import {AppStore} from 'angular2-redux';
-import {UserActions, REQUEST_USERS, RECEIVE_USERS, CURRENT_USER} from "../../../app/actions/user.actions";
+import {UserActions, UserActionType} from "../../../app/actions/user.actions";
 import {UserService} from "../../../app/services/user.service";
 import {User} from "../../../app/data/user";
 import {Http, HttpModule, Response, ResponseOptions} from "@angular/http";
@@ -34,8 +34,8 @@ describe('UserActions', () => {
         const dispatchSpy = appStoreMock.dispatch;
         expect(dispatchSpy).toHaveBeenCalled();
         expect(dispatchSpy.calls.count()).toEqual(2);
-        expect(dispatchSpy.calls.argsFor(0)[0]).toEqual({type: REQUEST_USERS});
-        expect(dispatchSpy.calls.argsFor(1)[0]).toEqual({type: RECEIVE_USERS, users:USERS});
+        expect(dispatchSpy.calls.argsFor(0)[0]).toEqual({type: UserActionType.REQUEST_USERS});
+        expect(dispatchSpy.calls.argsFor(1)[0]).toEqual({type: UserActionType.RECEIVE_USERS, users:USERS});
 
         const httpGetSpy = http.get;
         expect(httpGetSpy).toHaveBeenCalled();
@@ -62,8 +62,8 @@ describe('UserActions', () => {
         const dispatchSpy = appStoreMock.dispatch;
         expect(dispatchSpy).toHaveBeenCalled();
         expect(dispatchSpy.calls.count()).toEqual(2);
-        expect(dispatchSpy.calls.argsFor(0)[0]).toEqual({type: CURRENT_USER, current:null});
-        expect(dispatchSpy.calls.argsFor(1)[0]).toEqual({type: CURRENT_USER, current:USER});
+        expect(dispatchSpy.calls.argsFor(0)[0]).toEqual({type: UserActionType.CURRENT_USER, current:null});
+        expect(dispatchSpy.calls.argsFor(1)[0]).toEqual({type: UserActionType.CURRENT_USER, current:USER});
 
         const httpGetSpy = http.get;
         expect(httpGetSpy).toHaveBeenCalled();
@@ -73,17 +73,17 @@ describe('UserActions', () => {
     }));
 
     it('requestUsers should work', () =>
-        expect(new UserActions(null,null).requestUsers().type).toEqual(REQUEST_USERS));
+        expect(new UserActions(null,null).requestUsers().type).toEqual(UserActionType.REQUEST_USERS));
 
     it('receiveUsers should work', () => {
         const USERS = [<User>{name:"name1"}];
-        expect(new UserActions(null,null).receiveUsers(USERS).type).toEqual(RECEIVE_USERS);
+        expect(new UserActions(null,null).receiveUsers(USERS).type).toEqual(UserActionType.RECEIVE_USERS);
         expect(new UserActions(null,null).receiveUsers(USERS).users).toEqual(USERS);
     });
 
     it('setCurrentUser should work', () => {
         const USER = <User>{name:"current1"};
-        expect(new UserActions(null,null).setCurrentUser(USER).type).toEqual(CURRENT_USER);
+        expect(new UserActions(null,null).setCurrentUser(USER).type).toEqual(UserActionType.CURRENT_USER);
         expect(new UserActions(null,null).setCurrentUser(USER).current).toEqual(USER);
     });
 
