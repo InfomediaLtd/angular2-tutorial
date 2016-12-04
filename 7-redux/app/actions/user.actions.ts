@@ -4,9 +4,11 @@ import 'rxjs/add/operator/map';
 import {UserService} from "../services/user.service";
 import {AppStore,Actions} from "angular2-redux";
 
-export const REQUEST_USERS:string = 'REQUEST_USERS';
-export const RECEIVE_USERS:string = 'RECEIVE_USERS';
-export const CURRENT_USER:string = 'CURRENT_USER';
+export enum UserActionType {
+  REQUEST_USERS = 'REQUEST_USERS' as any,
+  RECEIVE_USERS = 'RECEIVE_USERS' as any,
+  CURRENT_USER = 'CURRENT_USER' as any
+}
 
 @Injectable()
 export class UserActions extends Actions {
@@ -31,7 +33,7 @@ export class UserActions extends Actions {
             	.subscribe();
     	};
 	}
-    requestUsers  ()             { return {type: REQUEST_USERS}; }
-    receiveUsers  (users:User[]) { return {type: RECEIVE_USERS, users} }
-    setCurrentUser(current:User) { return {type: CURRENT_USER, current} }
+    requestUsers  ()             { return {type: UserActionType.REQUEST_USERS}; }
+    receiveUsers  (users:User[]) { return {type: UserActionType.RECEIVE_USERS, users} }
+    setCurrentUser(current:User) { return {type: UserActionType.CURRENT_USER, current} }
 }
