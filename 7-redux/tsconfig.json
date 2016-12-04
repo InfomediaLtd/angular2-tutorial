@@ -11,13 +11,16 @@
     "baseUrl": "./",
     "paths": {
       "@angular/*": [
-        "jspm_packages/npm/@angular/*@2.1.2"
+        "jspm_packages/npm/@angular/*@2.2.1"
+      ],
+      "@angular/core/testing": [
+        "jspm_packages/npm/@angular/core@2.2.1/testing"
       ],
       "@angular/router": [
-        "jspm_packages/npm/@angular/router@3.1.2"
+        "jspm_packages/npm/@angular/router@3.2.1"
       ],
       "@angular/material": [
-        "jspm_packages/npm/@angular/material@2.0.0-alpha.9-3"
+        "jspm_packages/npm/@angular/material@2.0.0-alpha.9-experimental-pizza"
       ],
       "rxjs/*": [
         "jspm_packages/npm/rxjs@5.0.0-beta.12/*"
@@ -39,7 +42,8 @@
     ]
   },
   "include": [
-    "app/**/*.ts"
+    "app/**/*.ts",
+    "test/**/*.ts"
   ],
   "exclude": [
     "node_modules",

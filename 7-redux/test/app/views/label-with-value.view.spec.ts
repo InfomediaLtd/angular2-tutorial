@@ -1,6 +1,5 @@
-import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from '@angular/platform-browser-dynamic/testing'; 
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
-import {Component, DebugElement, ChangeDetectionStrategy}    from '@angular/core';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {Component}    from '@angular/core';
 import {By}              from '@angular/platform-browser';
 import {LabelWithValue} from "../../../app/views/label-with-value.view";
 

@@ -1,7 +1,5 @@
-import {BrowserDynamicTestingModule, platformBrowserDynamicTesting} from '@angular/platform-browser-dynamic/testing'; 
-import {ComponentFixture, TestBed, async} from '@angular/core/testing';
-import {Component, DebugElement, ChangeDetectionStrategy}    from '@angular/core';
-import {By}              from '@angular/platform-browser';
+import {ComponentFixture, TestBed} from '@angular/core/testing';
+import {Component, DebugElement}    from '@angular/core';
 import {FormsModule} from '@angular/forms'
 import {MaterialModule} from '@angular/material'
 import {LabelWithValue} from "../../../app/views/label-with-value.view"
@@ -9,7 +7,7 @@ import {User} from "../../../app/data/user";
 import {Address} from "../../../app/data/address";
 import {UserView} from "../../../app/views/user.view";
 
-let fixture: ComponentFixture<TestComponent>;
+let fixture: ComponentFixture<UserView>;
 let componentInstance:UserView;
 let nativeElement:HTMLElement;
 
@@ -42,7 +40,7 @@ describe('UserView', () => {
         expect(nativeElement.innerHTML).toContain("label-with-value");
     });
 
-    it('renders user prperties', () => {
+    it('renders user prperties1', () => {
         componentInstance.user = user;
         fixture.detectChanges();
 
