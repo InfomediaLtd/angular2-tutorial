@@ -1,6 +1,6 @@
 const fs = require("fs");
 
-const tsconfigString = fs.readFileSync("tsconfig.json","utf8");
+var tsconfigString = fs.readFileSync("tsconfig.json","utf8");
 const tsconfig = JSON.parse(tsconfigString).compilerOptions;
 
 if (tsconfig.paths) {
@@ -11,18 +11,18 @@ if (tsconfig.paths) {
     const paths = tsconfig.paths;
     for (path in paths) {
         //console.log(path);
-        const locations = paths[path];
+        var locations = paths[path];
         locations.forEach(location => {
-            const start = configString.indexOf(path,mapSectionStart);
+            var start = configString.indexOf(path,mapSectionStart);
             if (start>0) {
-                const end = configString.indexOf(",",start);
-                const pathConfig = configString.substring(start,end);
-                const match = pathConfig.match(`${path}@.*"`);
+                var end = configString.indexOf(",",start);
+                var pathConfig = configString.substring(start,end);
+                var match = pathConfig.match(`${path}@.*"`);
                 if (match && match.length>0) {
-                    const matchingPath = match[0].substring(0,match[0].length-1);
+                    var matchingPath = match[0].substring(0,match[0].length-1);
                     //console.log("        "+matchingPath);
 
-                    const updatedLocation;
+                    var updatedLocation;
                     if (location.match(new RegExp(`${path}@.*(["'/])`,'g'))) {
                         updatedLocation = location.replace(new RegExp(`${path}@.*(["'/])`,'g'),`${matchingPath}$1`);
                     } else {
