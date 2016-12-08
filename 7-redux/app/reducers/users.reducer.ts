@@ -3,11 +3,11 @@ import {UserActionType} from '../actions/user.actions';
 export default (state = {}, action:any = {}) => {
     switch (action.type) {
         case UserActionType.REQUEST_USERS:
-            return Object.assign({}, state, {isFetching: true});
+            return {...state, isFetching: true};
         case UserActionType.RECEIVE_USERS:
-            return Object.assign({}, state, {isFetching: false, users: action.users});
+            return{...state, isFetching: false, users: action.users};
         case UserActionType.CURRENT_USER: 
-            return Object.assign({}, state, {current: action.current});
+            return {...state, current: action.current};
         default: 
             return state;
     }

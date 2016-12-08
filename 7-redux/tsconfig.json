@@ -11,19 +11,19 @@
     "baseUrl": "./",
     "paths": {
       "@angular/*": [
-        "jspm_packages/npm/@angular/*@2.2.1"
+        "jspm_packages/npm/@angular/*@2.3.0"
       ],
       "@angular/core/testing": [
-        "jspm_packages/npm/@angular/core@2.2.1/testing"
+        "jspm_packages/npm/@angular/core@2.3.0/testing"
       ],
       "@angular/router": [
-        "jspm_packages/npm/@angular/router@3.2.1"
+        "jspm_packages/npm/@angular/router@3.3.0"
       ],
       "@angular/material": [
         "jspm_packages/npm/@angular/material@2.0.0-alpha.9-experimental-pizza"
       ],
       "rxjs/*": [
-        "jspm_packages/npm/rxjs@5.0.0-beta.12/*"
+        "jspm_packages/npm/rxjs@5.0.0-rc.4/*"
       ],
       "angular2-redux": [
         "jspm_packages/npm/angular2-redux@4.0.0/dist"
