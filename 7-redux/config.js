@@ -57,6 +57,7 @@ System.config({
     "@angular/core/testing": "npm:@angular/core@2.3.0/bundles/core-testing.umd.js",
     "@angular/forms": "npm:@angular/forms@2.3.0",
     "@angular/http": "npm:@angular/http@2.3.0",
+    "@angular/http/testing": "npm:@angular/http@2.3.0/bundles/http-testing.umd.js",
     "@angular/material": "npm:@angular/material@2.0.0-alpha.9-experimental-pizza",
     "@angular/platform-browser": "npm:@angular/platform-browser@2.3.0",
     "@angular/platform-browser-dynamic": "npm:@angular/platform-browser-dynamic@2.3.0",
