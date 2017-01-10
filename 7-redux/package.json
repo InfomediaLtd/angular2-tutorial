@@ -1,7 +1,8 @@
 {
   "scripts": {
     "postinstall": "jspm install",
-    "lint": "tslint ./app/**/*.ts -s node_modules/tslint-stylish -t stylish"
+    "lint": "tslint ./app/**/*.ts -s node_modules/tslint-stylish -t stylish",
+    "test": "karma start"
   },
   "jspm": {
     "dependencies": {
